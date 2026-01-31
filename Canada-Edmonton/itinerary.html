@@ -424,6 +424,73 @@
     .map-link:hover { background: var(--c-primary-dark); }
     .map-link::before { content: '\1F4CD'; }
 
+    /* ===== Custom Map ===== */
+    .custom-map {
+      position: relative;
+      width: 100%;
+      height: 280px;
+      background: linear-gradient(135deg, #e8f4ea 0%, #d4e8d9 100%);
+      border-radius: var(--radius-sm);
+      margin-top: var(--space-sm);
+      overflow: hidden;
+    }
+    .custom-map::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .map-marker {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 2;
+    }
+    .marker-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 2px solid white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    .marker-dot.spot { background: #1976D2; }
+    .marker-dot.hotel { background: #7B1FA2; }
+    .marker-dot.food { background: #E65100; }
+    .marker-label {
+      background: rgba(33, 33, 33, 0.85);
+      color: white;
+      font-size: 11px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-top: 4px;
+      white-space: nowrap;
+    }
+    .map-legend {
+      display: flex;
+      gap: var(--space-md);
+      margin-top: var(--space-sm);
+      font-size: 13px;
+      flex-wrap: wrap;
+    }
+    .map-legend span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    .legend-dot.spot { background: #1976D2; }
+    .legend-dot.hotel { background: #7B1FA2; }
+    .legend-dot.food { background: #E65100; }
+
     /* ===== Checklist ===== */
     .checklist-grid {
       display: grid;
@@ -1030,7 +1097,7 @@
           <div class="spot-card-body">
             <div class="spot-card-name">ウェストエドモントンモール</div>
             <div class="spot-card-desc">北米最大のショッピングモール。800店舗以上、水族館やウォーターパークも併設。</div>
-            <a href="https://maps.app.goo.gl/WestEdmontonMall" target="_blank" rel="noopener" class="map-link">
+            <a href="https://www.google.com/maps/place/West+Edmonton+Mall/@53.5225,-113.6242,17z" target="_blank" rel="noopener" class="map-link">
               地図で見る
             </a>
           </div>
@@ -1041,7 +1108,7 @@
           <div class="spot-card-body">
             <div class="spot-card-name">アルバータ美術館</div>
             <div class="spot-card-desc">波打つような近代建築が印象的。カナダのアート作品を多数展示。</div>
-            <a href="https://maps.app.goo.gl/ArtGalleryOfAlberta" target="_blank" rel="noopener" class="map-link">
+            <a href="https://www.google.com/maps/place/Art+Gallery+of+Alberta/@53.5463,-113.4897,17z" target="_blank" rel="noopener" class="map-link">
               地図で見る
             </a>
           </div>
@@ -1052,7 +1119,7 @@
           <div class="spot-card-body">
             <div class="spot-card-name">アルバータ州議事堂</div>
             <div class="spot-card-desc">歴史ある荘厳な建物。無料ガイドツアーで内部見学可能。</div>
-            <a href="https://maps.app.goo.gl/AlbertaLegislature" target="_blank" rel="noopener" class="map-link">
+            <a href="https://www.google.com/maps/place/Alberta+Legislature+Building/@53.5344,-113.5065,17z" target="_blank" rel="noopener" class="map-link">
               地図で見る
             </a>
           </div>
@@ -1063,9 +1130,55 @@
           <div class="spot-card-body">
             <div class="spot-card-name">ロジャーズプレイス</div>
             <div class="spot-card-desc">NHLエドモントン・オイラーズの本拠地。ホテル近くのアイスディストリクト内。</div>
-            <a href="https://maps.app.goo.gl/RogersPlace" target="_blank" rel="noopener" class="map-link">
+            <a href="https://www.google.com/maps/place/Rogers+Place/@53.5469,-113.4979,17z" target="_blank" rel="noopener" class="map-link">
               地図で見る
             </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- カスタムマップ -->
+      <div class="card" style="margin-top: var(--space-md);">
+        <div class="card-body">
+          <div class="card-title">スポット位置マップ</div>
+          <div class="custom-map">
+            <div class="map-marker" style="top: 45%; left: 15%;">
+              <span class="marker-dot spot"></span>
+              <span class="marker-label">モール</span>
+            </div>
+            <div class="map-marker" style="top: 35%; left: 60%;">
+              <span class="marker-dot spot"></span>
+              <span class="marker-label">美術館</span>
+            </div>
+            <div class="map-marker" style="top: 55%; left: 55%;">
+              <span class="marker-dot spot"></span>
+              <span class="marker-label">州議事堂</span>
+            </div>
+            <div class="map-marker" style="top: 32%; left: 65%;">
+              <span class="marker-dot hotel"></span>
+              <span class="marker-label">JWマリオット</span>
+            </div>
+            <div class="map-marker" style="top: 30%; left: 63%;">
+              <span class="marker-dot spot"></span>
+              <span class="marker-label">ロジャーズ</span>
+            </div>
+            <div class="map-marker" style="top: 60%; left: 75%;">
+              <span class="marker-dot food"></span>
+              <span class="marker-label">Duchess</span>
+            </div>
+            <div class="map-marker" style="top: 70%; left: 70%;">
+              <span class="marker-dot food"></span>
+              <span class="marker-label">Café Bicyclette</span>
+            </div>
+            <div class="map-marker" style="top: 40%; left: 58%;">
+              <span class="marker-dot food"></span>
+              <span class="marker-label">MEAT</span>
+            </div>
+          </div>
+          <div class="map-legend">
+            <span><span class="legend-dot spot"></span> 観光スポット</span>
+            <span><span class="legend-dot hotel"></span> ホテル</span>
+            <span><span class="legend-dot food"></span> グルメ</span>
           </div>
         </div>
       </div>
@@ -1083,7 +1196,7 @@
           <div class="spot-card-body">
             <div class="spot-card-name">Duchess Bake Shop</div>
             <div class="spot-card-desc">地元で大人気のベーカリー。マカロン・クロワッサンが絶品。女性一人でも入りやすい雰囲気。</div>
-            <a href="https://maps.app.goo.gl/Duchess-Bake-Shop-Edmonton" target="_blank" rel="noopener" class="map-link">
+            <a href="https://www.google.com/maps/place/Duchess+Bake+Shop/@53.5182,-113.4955,17z" target="_blank" rel="noopener" class="map-link">
               地図で見る
             </a>
           </div>
@@ -1094,7 +1207,7 @@
           <div class="spot-card-body">
             <div class="spot-card-name">Café Bicyclette</div>
             <div class="spot-card-desc">La Cité Francophone内のフレンチカフェ。クレープ・キッシュがおすすめ。落ち着いた雰囲気。</div>
-            <a href="https://maps.app.goo.gl/Cafe-Bicyclette-Edmonton" target="_blank" rel="noopener" class="map-link">
+            <a href="https://www.google.com/maps/place/Cafe+Bicyclette/@53.5095,-113.4762,17z" target="_blank" rel="noopener" class="map-link">
               地図で見る
             </a>
           </div>
@@ -1105,7 +1218,7 @@
           <div class="spot-card-body">
             <div class="spot-card-name">MEAT</div>
             <div class="spot-card-desc">アルバータビーフの本格ステーキ。せっかくなら一度は本場の肉を！予約推奨。</div>
-            <a href="https://maps.app.goo.gl/MEAT-Edmonton" target="_blank" rel="noopener" class="map-link">
+            <a href="https://www.google.com/maps/place/MEAT/@53.5401,-113.4981,17z" target="_blank" rel="noopener" class="map-link">
               地図で見る
             </a>
           </div>
@@ -1116,7 +1229,7 @@
           <div class="spot-card-body">
             <div class="spot-card-name">Tim Hortons</div>
             <div class="spot-card-desc">カナダの国民的カフェチェーン。ドーナツとコーヒーで休憩。どこにでもあって便利。</div>
-            <a href="https://maps.app.goo.gl/TimHortons-Edmonton" target="_blank" rel="noopener" class="map-link">
+            <a href="https://www.google.com/maps/search/Tim+Hortons+Edmonton/@53.5461,-113.4938,13z" target="_blank" rel="noopener" class="map-link">
               地図で見る
             </a>
           </div>
@@ -1146,6 +1259,18 @@
             降雪の可能性あり。風が強いと体感温度はさらに下がります。
           </p>
         </div>
+      </div>
+
+      <!-- 現地の服装写真 -->
+      <div class="photo-card">
+        <img src="./images/winter-clothing.jpg"
+             alt="カナダの冬の服装例"
+             loading="lazy">
+        <div class="photo-card-overlay">
+          <div class="photo-card-title">現地の人たちの服装</div>
+          <div class="photo-card-desc">厚手のダウンコート・ニット帽・手袋が基本スタイル</div>
+        </div>
+        <span class="photo-credit">Unsplash</span>
       </div>
 
       <div class="card">
