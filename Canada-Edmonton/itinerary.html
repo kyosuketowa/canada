@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>枝里子へ - エドモントン旅行しおり</title>
+  <link rel="icon" type="image/svg+xml" href="./images/icon.svg">
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#D52B1E">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="description" content="森下枝里子さんのカナダ・エドモントン旅行しおり 2025年3月3日〜8日">
+
+  <style>
+    /* ===== CSS Variables ===== */
+    :root {
+      --canada-red: #D52B1E;
+      --canada-red-dark: #B8251A;
+      --maple-orange: #E07020;
+      --winter-blue: #2E86AB;
+      --snow-white: #FFFFFF;
+      --warm-bg: #FFF8F5;
+      --warm-bg-alt: #FEF3ED;
+      --text-primary: #2D2D2D;
+      --text-secondary: #5A5A5A;
+      --text-light: #888888;
+      --border-light: #E8E0DC;
+      --shadow-soft: 0 2px 8px rgba(0,0,0,0.08);
+      --shadow-medium: 0 4px 16px rgba(0,0,0,0.12);
+      --shadow-large: 0 8px 32px rgba(0,0,0,0.16);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --transition: 0.3s ease;
+    }
+
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+      background-color: var(--warm-bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* ===== Container ===== */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* ===== Header ===== */
+    .header {
+      background: linear-gradient(135deg, var(--canada-red) 0%, var(--canada-red-dark) 100%);
+      color: var(--snow-white);
+      padding: 32px 16px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23FFFFFF' fill-opacity='0.05' d='M50 10 L55 30 L70 25 L62 38 L80 45 L65 52 L72 65 L58 58 L60 75 L50 65 L40 75 L42 58 L28 65 L35 52 L20 45 L38 38 L30 25 L45 30 Z'/%3E%3C/svg%3E");
+      background-size: 80px 80px;
+      opacity: 0.5;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-icon {
+      font-size: 3rem;
+      margin-bottom: 8px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .header-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .header-subtitle {
+      font-size: 1rem;
+      opacity: 0.95;
+      margin-bottom: 16px;
+    }
+
+    .header-from-to {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-bottom: 20px;
+    }
+
+    .header-message {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin: 0 auto;
+      max-width: 500px;
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    .header-message p {
+      margin-bottom: 8px;
+    }
+
+    .header-message p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ===== Countdown ===== */
+    .countdown-section {
+      background: rgba(255,255,255,0.1);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      margin-top: 24px;
+    }
+
+    .countdown-label {
+      font-size: 0.85rem;
+      opacity: 0.9;
+      margin-bottom: 12px;
+    }
+
+    .countdown-timer {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .countdown-item {
+      background: rgba(255,255,255,0.2);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      min-width: 70px;
+    }
+
+    .countdown-value {
+      font-size: 1.8rem;
+      font-weight: 700;
+      display: block;
+    }
+
+    .countdown-unit {
+      font-size: 0.75rem;
+      opacity: 0.9;
+    }
+
+    .countdown-departed {
+      font-size: 1.2rem;
+      padding: 20px;
+    }
+
+    /* ===== Current Time ===== */
+    .current-time {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 16px;
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
+    .time-zone {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .time-zone-label {
+      opacity: 0.8;
+    }
+
+    /* ===== Summary Cards ===== */
+    .summary-section {
+      padding: 24px 16px;
+      margin-top: -20px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .summary-card {
+      background: var(--snow-white);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-light);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .summary-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-medium);
+    }
+
+    .summary-card-icon {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    .summary-card-label {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .summary-card-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .summary-card-sub {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    .summary-card.highlight {
+      background: linear-gradient(135deg, var(--warm-bg-alt) 0%, #FFF5EE 100%);
+      border-color: var(--maple-orange);
+    }
+
+    /* ===== Table of Contents ===== */
+    .toc-section {
+      padding: 24px 16px;
+    }
+
+    .toc-card {
+      background: var(--snow-white);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-soft);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .toc-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--canada-red);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toc-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    .toc-item a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      transition: background var(--transition);
+    }
+
+    .toc-item a:hover {
+      background: var(--warm-bg-alt);
+    }
+
+    .toc-icon {
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 500px) {
+      .toc-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ===== Section Common ===== */
+    .section {
+      padding: 32px 16px;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title-icon {
+      font-size: 1.4rem;
+    }
+
+    .card {
+      background: var(--snow-white);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 16px;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    /* ===== Info Grid ===== */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .info-icon {
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .info-content {
+      flex: 1;
+    }
+
+    .info-label {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-bottom: 2px;
+    }
+
+    .info-value {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    /* ===== Warning Box ===== */
+    .warning-box {
+      background: linear-gradient(135deg, #FFF3E0 0%, #FFECB3 100%);
+      border-left: 4px solid var(--maple-orange);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin: 16px 0;
+    }
+
+    .warning-box-title {
+      font-weight: 600;
+      color: #E65100;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .warning-box p {
+      font-size: 0.9rem;
+      color: #5D4037;
+    }
+
+    /* ===== Cold Warning ===== */
+    .cold-warning {
+      background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+      border-left: 4px solid var(--winter-blue);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin: 16px 0;
+    }
+
+    .cold-warning-title {
+      font-weight: 600;
+      color: #1565C0;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cold-warning p {
+      font-size: 0.9rem;
+      color: #37474F;
+    }
+
+    /* ===== Flight Route SVG ===== */
+    .flight-route-container {
+      background: var(--snow-white);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-soft);
+      overflow-x: auto;
+    }
+
+    .flight-route-svg {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
+
+    /* ===== Schedule Timeline ===== */
+    .schedule-day {
+      background: var(--snow-white);
+      border-radius: var(--radius-lg);
+      margin-bottom: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .schedule-day-header {
+      background: linear-gradient(135deg, var(--canada-red) 0%, var(--canada-red-dark) 100%);
+      color: var(--snow-white);
+      padding: 16px 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .schedule-day-header:hover {
+      opacity: 0.95;
+    }
+
+    .schedule-day-title {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .schedule-day-subtitle {
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
+    .schedule-day-toggle {
+      font-size: 1.2rem;
+      transition: transform var(--transition);
+    }
+
+    .schedule-day.collapsed .schedule-day-toggle {
+      transform: rotate(-90deg);
+    }
+
+    .schedule-day-content {
+      padding: 20px;
+      display: block;
+    }
+
+    .schedule-day.collapsed .schedule-day-content {
+      display: none;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+    }
+
+    .timeline-time {
+      font-weight: 600;
+      color: var(--canada-red);
+      min-width: 60px;
+      font-size: 0.9rem;
+    }
+
+    .timeline-content {
+      flex: 1;
+    }
+
+    .timeline-title {
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .timeline-detail {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .timeline-tags {
+      display: flex;
+      gap: 6px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      background: var(--warm-bg-alt);
+      color: var(--text-secondary);
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+
+    .tag.flight {
+      background: #E3F2FD;
+      color: #1565C0;
+    }
+
+    .tag.hotel {
+      background: #F3E5F5;
+      color: #7B1FA2;
+    }
+
+    .tag.reunion {
+      background: #FFF3E0;
+      color: #E65100;
+    }
+
+    /* ===== Spot Cards ===== */
+    .spot-card {
+      background: var(--snow-white);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-light);
+    }
+
+    .spot-card.recommended {
+      border-color: var(--canada-red);
+      border-width: 2px;
+    }
+
+    .spot-card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .spot-card-icon {
+      font-size: 2rem;
+    }
+
+    .spot-card-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .spot-card-badge {
+      display: inline-block;
+      background: var(--canada-red);
+      color: white;
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 100px;
+      margin-left: 8px;
+    }
+
+    .spot-card-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+
+    .spot-card-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .feature-tag {
+      background: var(--warm-bg);
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+    }
+
+    /* ===== Reunion Section ===== */
+    .reunion-card {
+      background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%);
+      border: 2px solid #FFB300;
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      text-align: center;
+    }
+
+    .reunion-icon {
+      font-size: 3rem;
+      margin-bottom: 12px;
+    }
+
+    .reunion-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #F57F17;
+      margin-bottom: 12px;
+    }
+
+    .reunion-desc {
+      font-size: 0.95rem;
+      color: #5D4037;
+      margin-bottom: 16px;
+    }
+
+    .reunion-placeholder {
+      background: white;
+      border: 2px dashed #FFB300;
+      border-radius: var(--radius-md);
+      padding: 16px;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    /* ===== Checklist ===== */
+    .checklist-category {
+      margin-bottom: 20px;
+    }
+
+    .checklist-category-title {
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .checklist-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 8px;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      background: var(--warm-bg);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: background var(--transition);
+    }
+
+    .checklist-item:hover {
+      background: var(--warm-bg-alt);
+    }
+
+    .checklist-item.checked {
+      background: #E8F5E9;
+    }
+
+    .checklist-item.checked .checklist-text {
+      text-decoration: line-through;
+      color: var(--text-light);
+    }
+
+    .checklist-checkbox {
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--border-light);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all var(--transition);
+    }
+
+    .checklist-item.checked .checklist-checkbox {
+      background: #4CAF50;
+      border-color: #4CAF50;
+      color: white;
+    }
+
+    .checklist-text {
+      font-size: 0.9rem;
+    }
+
+    .checklist-important {
+      background: #FFEBEE;
+    }
+
+    .checklist-important.checked {
+      background: #E8F5E9;
+    }
+
+    /* ===== Hotel Table ===== */
+    .hotel-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .hotel-table th,
+    .hotel-table td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .hotel-table th {
+      background: var(--warm-bg);
+      font-weight: 600;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+
+    .hotel-table td {
+      vertical-align: top;
+    }
+
+    .hotel-name {
+      font-weight: 500;
+    }
+
+    .hotel-confirm {
+      font-family: monospace;
+      background: var(--warm-bg);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+    }
+
+    /* ===== Emergency Contacts ===== */
+    .emergency-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .emergency-item {
+      background: var(--warm-bg);
+      border-radius: var(--radius-md);
+      padding: 16px;
+    }
+
+    .emergency-label {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-bottom: 4px;
+    }
+
+    .emergency-value {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--canada-red);
+    }
+
+    .emergency-note {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      background: var(--text-primary);
+      color: var(--snow-white);
+      padding: 32px 16px;
+      text-align: center;
+    }
+
+    .footer-message {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .footer-from {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    .footer-icon {
+      font-size: 2rem;
+      margin-top: 16px;
+    }
+
+    /* ===== Print Styles ===== */
+    @media print {
+      .header {
+        background: var(--canada-red) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .schedule-day-content {
+        display: block !important;
+      }
+
+      .toc-section {
+        display: none;
+      }
+
+      .card, .spot-card, .schedule-day {
+        break-inside: avoid;
+      }
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 600px) {
+      .header-title {
+        font-size: 1.5rem;
+      }
+
+      .countdown-timer {
+        gap: 8px;
+      }
+
+      .countdown-item {
+        padding: 10px 12px;
+        min-width: 60px;
+      }
+
+      .countdown-value {
+        font-size: 1.5rem;
+      }
+
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .current-time {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== Header Section ===== -->
+  <header class="header">
+    <div class="header-content">
+      <div class="header-icon">🍁</div>
+      <h1 class="header-title">枝里子へ - エドモントン旅行しおり</h1>
+      <p class="header-subtitle">2025年3月3日(月) 〜 3月8日(土)</p>
+
+      <div class="header-from-to">
+        <span>To: 枝里子へ</span>
+        <span>From: 恭祐より</span>
+      </div>
+
+      <div class="header-message">
+        <p>久しぶりのカナダ、楽しんできてね！</p>
+        <p>イチローさん家族によろしく伝えてください。</p>
+        <p>寒いから防寒しっかりね！❄️</p>
+      </div>
+
+      <!-- Countdown Timer -->
+      <div class="countdown-section">
+        <div class="countdown-label">出発まであと</div>
+        <div id="countdown" class="countdown-timer">
+          <div class="countdown-item">
+            <span class="countdown-value" id="countdown-days">--</span>
+            <span class="countdown-unit">日</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-value" id="countdown-hours">--</span>
+            <span class="countdown-unit">時間</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-value" id="countdown-minutes">--</span>
+            <span class="countdown-unit">分</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-value" id="countdown-seconds">--</span>
+            <span class="countdown-unit">秒</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Current Time Display -->
+      <div class="current-time">
+        <div class="time-zone">
+          <span class="time-zone-label">🇯🇵 日本:</span>
+          <span id="time-jst">--:--</span>
+        </div>
+        <div class="time-zone">
+          <span class="time-zone-label">🇨🇦 エドモントン:</span>
+          <span id="time-mst">--:--</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Summary Cards ===== -->
+  <section class="summary-section">
+    <div class="summary-grid">
+      <div class="summary-card">
+        <div class="summary-card-icon">✈️</div>
+        <div class="summary-card-label">出発</div>
+        <div class="summary-card-value">3/3(月) 19:25</div>
+        <div class="summary-card-sub">関西空港 KIX</div>
+      </div>
+
+      <div class="summary-card">
+        <div class="summary-card-icon">🛬</div>
+        <div class="summary-card-label">到着</div>
+        <div class="summary-card-value">3/3(月) 21:43</div>
+        <div class="summary-card-sub">エドモントン YEG（現地時間）</div>
+      </div>
+
+      <div class="summary-card highlight">
+        <div class="summary-card-icon">🍁</div>
+        <div class="summary-card-label">メインイベント</div>
+        <div class="summary-card-value">イチローさん家族との再会</div>
+        <div class="summary-card-sub">久しぶりのカナダ！</div>
+      </div>
+
+      <div class="summary-card">
+        <div class="summary-card-icon">🏠</div>
+        <div class="summary-card-label">帰国</div>
+        <div class="summary-card-value">3/8(土) 18:45</div>
+        <div class="summary-card-sub">羽田空港 HND</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Table of Contents ===== -->
+  <section class="toc-section">
+    <div class="toc-card">
+      <h2 class="toc-title">
+        <span>📋</span>
+        目次
+      </h2>
+      <ul class="toc-list">
+        <li class="toc-item">
+          <a href="#basic-info">
+            <span class="toc-icon">📌</span>
+            <span>基本情報</span>
+          </a>
+        </li>
+        <li class="toc-item">
+          <a href="#important-notes">
+            <span class="toc-icon">⚠️</span>
+            <span>重要な注意事項</span>
+          </a>
+        </li>
+        <li class="toc-item">
+          <a href="#flight-route">
+            <span class="toc-icon">🛫</span>
+            <span>フライトルート</span>
+          </a>
+        </li>
+        <li class="toc-item">
+          <a href="#schedule">
+            <span class="toc-icon">📅</span>
+            <span>日程スケジュール</span>
+          </a>
+        </li>
+        <li class="toc-item">
+          <a href="#reunion">
+            <span class="toc-icon">🤝</span>
+            <span>イチローさんとの再会</span>
+          </a>
+        </li>
+        <li class="toc-item">
+          <a href="#spots">
+            <span class="toc-icon">📍</span>
+            <span>観光スポット</span>
+          </a>
+        </li>
+        <li class="toc-item">
+          <a href="#gourmet">
+            <span class="toc-icon">🍽️</span>
+            <span>グルメ情報</span>
+          </a>
+        </li>
+        <li class="toc-item">
+          <a href="#weather">
+            <span class="toc-icon">❄️</span>
+            <span>天気・服装</span>
+          </a>
+        </li>
+        <li class="toc-item">
+          <a href="#access">
+            <span class="toc-icon">🚕</span>
+            <span>アクセス情報</span>
+          </a>
+        </li>
+        <li class="toc-item">
+          <a href="#checklist">
+            <span class="toc-icon">✅</span>
+            <span>持ち物チェック</span>
+          </a>
+        </li>
+        <li class="toc-item">
+          <a href="#hotels">
+            <span class="toc-icon">🏨</span>
+            <span>宿泊情報</span>
+          </a>
+        </li>
+        <li class="toc-item">
+          <a href="#emergency">
+            <span class="toc-icon">🆘</span>
+            <span>緊急連絡先</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <main class="container">
+
+  <!-- Part 1 End - 続きはPart 2で追加 -->
