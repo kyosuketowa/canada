@@ -50,8 +50,8 @@
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
       background-color: var(--warm-bg);
       color: var(--text-primary);
-      line-height: 1.7;
-      font-size: 16px;
+      line-height: 1.9;
+      font-size: 18px;
     }
 
     /* ===== Container ===== */
@@ -100,9 +100,9 @@
     }
 
     .header-title {
-      font-size: 1.8rem;
+      font-size: 2.2rem;
       font-weight: 700;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
       letter-spacing: 0.5px;
     }
 
@@ -325,17 +325,17 @@
     }
 
     .section-title {
-      font-size: 1.3rem;
+      font-size: 1.6rem;
       font-weight: 700;
       color: var(--text-primary);
-      margin-bottom: 20px;
+      margin-bottom: 24px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
     .section-title-icon {
-      font-size: 1.4rem;
+      font-size: 1.6rem;
     }
 
     .card {
@@ -449,6 +449,101 @@
       display: block;
     }
 
+    /* ===== Map Section ===== */
+    .map-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-medium);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 400px;
+      border: 0;
+      display: block;
+    }
+
+    .map-legend {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      font-size: 12px;
+      box-shadow: var(--shadow-soft);
+      max-width: 220px;
+    }
+
+    .map-legend-title {
+      font-weight: 600;
+      font-size: 13px;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    .map-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .map-legend-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .legend-dot.safe { background: #4CAF50; }
+    .legend-dot.caution { background: #FF9800; }
+    .legend-dot.danger { background: #F44336; }
+
+    /* ===== Spot Images ===== */
+    .spot-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+      margin-bottom: 16px;
+    }
+
+    .spot-image-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    .spot-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .image-credit {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      font-size: 10px;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
     /* ===== Schedule Timeline ===== */
     .schedule-day {
       background: var(--snow-white);
@@ -461,7 +556,7 @@
     .schedule-day-header {
       background: linear-gradient(135deg, var(--canada-red) 0%, var(--canada-red-dark) 100%);
       color: var(--snow-white);
-      padding: 16px 20px;
+      padding: 18px 24px;
       cursor: pointer;
       display: flex;
       justify-content: space-between;
@@ -473,13 +568,25 @@
     }
 
     .schedule-day-title {
+      font-weight: 700;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .day-badge {
+      background: rgba(255,255,255,0.25);
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: 0.85rem;
       font-weight: 600;
-      font-size: 1rem;
     }
 
     .schedule-day-subtitle {
-      font-size: 0.85rem;
+      font-size: 0.95rem;
       opacity: 0.9;
+      margin-top: 4px;
     }
 
     .schedule-day-toggle {
@@ -1009,6 +1116,12 @@
           </a>
         </li>
         <li class="toc-item">
+          <a href="#safety-map">
+            <span class="toc-icon">🗺️</span>
+            <span>市内マップ・治安</span>
+          </a>
+        </li>
+        <li class="toc-item">
           <a href="#spots">
             <span class="toc-icon">📍</span>
             <span>観光スポット</span>
@@ -1300,8 +1413,11 @@
       <details class="schedule-day" open>
         <summary class="schedule-day-header">
           <div>
-            <div class="schedule-day-title">3/3(月) 移動日</div>
-            <div class="schedule-day-subtitle">日本 → カナダ</div>
+            <div class="schedule-day-title">
+              <span class="day-badge">1日目</span>
+              3/3(月) 移動日
+            </div>
+            <div class="schedule-day-subtitle">日本 → カナダ（乗継2回）</div>
           </div>
           <span class="schedule-day-toggle">▼</span>
         </summary>
@@ -1377,8 +1493,11 @@
       <details class="schedule-day" open>
         <summary class="schedule-day-header">
           <div>
-            <div class="schedule-day-title">3/4(火) エドモントン1日目</div>
-            <div class="schedule-day-subtitle">ホテル移動 & 自由行動</div>
+            <div class="schedule-day-title">
+              <span class="day-badge">2日目</span>
+              3/4(火) エドモントン滞在
+            </div>
+            <div class="schedule-day-subtitle">ホテル移動 → 自由行動</div>
           </div>
           <span class="schedule-day-toggle">▼</span>
         </summary>
@@ -1387,7 +1506,11 @@
             <div class="timeline-time">午前</div>
             <div class="timeline-content">
               <div class="timeline-title">空港ホテル → JW Marriott へ移動</div>
-              <div class="timeline-detail">タクシー/Uber 約30分（CAD $50-70程度）<br>※イチローさんが迎えに来てくれるかも？</div>
+              <div class="timeline-detail">
+                <strong>交通手段:</strong><br>
+                🚕 タクシー/Uber: 約30分、CAD $50-70<br>
+                🚌 Route 747バス + LRT: $5 CAD（Century Park経由）
+              </div>
               <div class="timeline-tags">
                 <span class="tag">🚕 移動</span>
               </div>
@@ -1415,7 +1538,10 @@
       <details class="schedule-day" open>
         <summary class="schedule-day-header">
           <div>
-            <div class="schedule-day-title">3/5(水) エドモントン2日目</div>
+            <div class="schedule-day-title">
+              <span class="day-badge">3日目</span>
+              3/5(水) エドモントン滞在
+            </div>
             <div class="schedule-day-subtitle">終日自由行動</div>
           </div>
           <span class="schedule-day-toggle">▼</span>
@@ -1447,7 +1573,10 @@
       <details class="schedule-day" open>
         <summary class="schedule-day-header">
           <div>
-            <div class="schedule-day-title">3/6(木) エドモントン3日目</div>
+            <div class="schedule-day-title">
+              <span class="day-badge">4日目</span>
+              3/6(木) エドモントン最終日
+            </div>
             <div class="schedule-day-subtitle">終日自由行動（エドモントン最終日）</div>
           </div>
           <span class="schedule-day-toggle">▼</span>
@@ -1483,7 +1612,10 @@
       <details class="schedule-day" open>
         <summary class="schedule-day-header">
           <div>
-            <div class="schedule-day-title">3/7(金) 帰国日</div>
+            <div class="schedule-day-title">
+              <span class="day-badge">5日目</span>
+              3/7(金) 帰国フライト
+            </div>
             <div class="schedule-day-subtitle">カナダ → 日本</div>
           </div>
           <span class="schedule-day-toggle">▼</span>
@@ -1541,7 +1673,10 @@
       <details class="schedule-day" open>
         <summary class="schedule-day-header">
           <div>
-            <div class="schedule-day-title">3/8(土) 日本到着</div>
+            <div class="schedule-day-title">
+              <span class="day-badge">6日目</span>
+              3/8(土) 日本到着
+            </div>
             <div class="schedule-day-subtitle">おかえりなさい！</div>
           </div>
           <span class="schedule-day-toggle">▼</span>
@@ -1605,6 +1740,78 @@
       </div>
     </section>
 
+    <!-- Safety Map Section -->
+    <section id="safety-map" class="section">
+      <h2 class="section-title">
+        <span class="section-title-icon">🗺️</span>
+        エドモントン市内マップ
+      </h2>
+
+      <div class="card">
+        <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 16px;">
+          エドモントンは比較的治安の良い都市ですが、一部注意が必要なエリアがあります。
+          観光エリア（Ice District、Old Strathcona、West Edmonton Mall）は安全に過ごせます。
+        </p>
+
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d75899.04850647442!2d-113.5490!3d53.5461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a0224580deff23%3A0x411fa00c4af6155d!2sEdmonton%2C%20AB%2C%20Canada!5e0!3m2!1sen!2sjp!4v1234567890"
+            width="100%"
+            height="400"
+            style="border:0; border-radius: 12px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          <div class="map-legend">
+            <div class="map-legend-title">エリア安全度</div>
+            <div class="map-legend-item">
+              <span class="legend-dot safe"></span>
+              <span>安全（観光エリア）</span>
+            </div>
+            <div class="map-legend-item">
+              <span class="legend-dot caution"></span>
+              <span>注意（深夜の繁華街）</span>
+            </div>
+            <div class="map-legend-item">
+              <span class="legend-dot danger"></span>
+              <span>避けた方が良い</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 20px; display: grid; gap: 12px;">
+          <div style="display: flex; gap: 12px; align-items: flex-start; padding: 12px; background: #E8F5E9; border-radius: var(--radius-sm);">
+            <span style="font-size: 1.2rem;">✅</span>
+            <div>
+              <strong style="color: #2E7D32;">安全エリア</strong>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px;">
+                Ice District（ホテル周辺）、West Edmonton Mall、Old Strathcona、ダウンタウン中心部
+              </p>
+            </div>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: flex-start; padding: 12px; background: #FFF3E0; border-radius: var(--radius-sm);">
+            <span style="font-size: 1.2rem;">⚠️</span>
+            <div>
+              <strong style="color: #E65100;">注意エリア</strong>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px;">
+                Whyte Avenue周辺（深夜）、Jasper Avenue西側（深夜）
+              </p>
+            </div>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: flex-start; padding: 12px; background: #FFEBEE; border-radius: var(--radius-sm);">
+            <span style="font-size: 1.2rem;">🚫</span>
+            <div>
+              <strong style="color: #C62828;">避けた方が良いエリア</strong>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px;">
+                118 Avenue周辺、Chinatown北側、McCauley地区（特に夜間）
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Spots Section -->
     <section id="spots" class="section">
       <h2 class="section-title">
@@ -1619,9 +1826,13 @@
         <div class="spot-card-header">
           <span class="spot-card-icon">🛍️</span>
           <div>
-            <span class="spot-card-title">West Edmonton Mall</span>
+            <span class="spot-card-title">ウエスト・エドモントン・モール</span>
             <span class="spot-card-badge">おすすめ!</span>
           </div>
+        </div>
+        <div class="spot-image-container">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/West_Edmonton_Mall_Entrance.jpg/1280px-West_Edmonton_Mall_Entrance.jpg" alt="West Edmonton Mall" loading="lazy">
+          <span class="image-credit">📷 Wikimedia Commons</span>
         </div>
         <p class="spot-card-desc">
           北米最大級のショッピングモール！800以上のショップ、100以上のレストランがあり、
@@ -1631,7 +1842,7 @@
           <span class="feature-tag">🏊 室内ウォーターパーク</span>
           <span class="feature-tag">⛸️ アイスリンク</span>
           <span class="feature-tag">🎢 遊園地 Galaxyland</span>
-          <span class="feature-tag">🛒 800+ ショップ</span>
+          <span class="feature-tag">🛒 800店舗以上</span>
         </div>
       </div>
 
@@ -1640,15 +1851,19 @@
         <div class="spot-card-header">
           <span class="spot-card-icon">🏒</span>
           <div>
-            <span class="spot-card-title">Ice District</span>
+            <span class="spot-card-title">アイス・ディストリクト</span>
           </div>
+        </div>
+        <div class="spot-image-container">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Rogers_Place_-_Edmonton_Alberta.jpg/1280px-Rogers_Place_-_Edmonton_Alberta.jpg" alt="Rogers Place" loading="lazy">
+          <span class="image-credit">📷 Wikimedia Commons</span>
         </div>
         <p class="spot-card-desc">
           ホテル（JW Marriott）周辺のエンタメエリア。NHLエドモントン・オイラーズの本拠地
-          Rogers Placeがあり、レストランやバーも多数。夜も楽しめるエリアです。
+          ロジャーズ・プレイスがあり、レストランやバーも多数。夜も楽しめるエリアです。
         </p>
         <div class="spot-card-features">
-          <span class="feature-tag">🏟️ Rogers Place</span>
+          <span class="feature-tag">🏟️ ロジャーズ・プレイス</span>
           <span class="feature-tag">🍽️ レストラン多数</span>
           <span class="feature-tag">🌃 ナイトライフ</span>
         </div>
@@ -1659,7 +1874,7 @@
         <div class="spot-card-header">
           <span class="spot-card-icon">🏘️</span>
           <div>
-            <span class="spot-card-title">Old Strathcona</span>
+            <span class="spot-card-title">オールド・ストラスコナ</span>
           </div>
         </div>
         <p class="spot-card-desc">
@@ -1875,17 +2090,17 @@
             </div>
           </div>
           <div style="display: flex; gap: 12px; align-items: flex-start;">
-            <span style="font-size: 1.3rem;">🤝</span>
+            <span style="font-size: 1.3rem;">🚇</span>
             <div>
-              <strong>イチローさんが迎えに来てくれるかも？</strong>
-              <p style="font-size: 0.85rem; color: var(--text-secondary);">要確認</p>
+              <strong>LRT（ライトレール）</strong>
+              <p style="font-size: 0.85rem; color: var(--text-secondary);">Century Park駅からCapital Line利用</p>
             </div>
           </div>
         </div>
       </div>
 
       <div class="card">
-        <h3 class="card-title">✈️ 帰国日（3/7）JW Marriott → 空港</h3>
+        <h3 class="card-title">✈️ 帰国日（3/7）JW Marriott → エドモントン国際空港</h3>
         <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 8px;">
           タクシー/Uber 約30分<br>
           <strong style="color: var(--canada-red);">11:05発なので、8:30-9:00頃ホテル出発</strong>を推奨
