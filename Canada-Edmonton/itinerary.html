@@ -479,6 +479,44 @@
     .hotel-contact { font-size: 13px; color: var(--c-text-secondary); margin-top: var(--space-sm); }
     .hotel-contact a { color: var(--c-primary); text-decoration: none; min-height: var(--tap-target); display: inline-flex; align-items: center; }
 
+    /* ===== Copyable ===== */
+    .copyable {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .copyable:hover { background: var(--c-border); }
+    .copyable:active { background: #CCC; }
+    .copy-icon { font-size: 14px; opacity: 0.6; }
+    .copy-toast {
+      position: fixed;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--c-text);
+      color: white;
+      padding: var(--space-sm) var(--space-md);
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      z-index: 1001;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .copy-toast.show { opacity: 1; }
+
+    /* ===== Info Grid ===== */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-md);
+    }
+    .info-item-label { font-size: 12px; color: var(--c-text-muted); margin-bottom: 2px; }
+    .info-item-value { font-weight: 500; }
+
     /* ===== Emergency FAB ===== */
     .fab-emergency {
       position: fixed;
@@ -633,6 +671,7 @@
   <!-- ===== Sticky Navigation ===== -->
   <nav class="sticky-nav" aria-label="メインナビゲーション">
     <ul class="nav-list">
+      <li><a href="#basic-info">基本</a></li>
       <li><a href="#schedule">日程</a></li>
       <li><a href="#hotels">宿泊</a></li>
       <li><a href="#spots">観光</a></li>
@@ -662,16 +701,51 @@
       </div>
     </section>
 
+    <!-- ===== Basic Info ===== -->
+    <section id="basic-info" class="section">
+      <div class="section-header">
+        <h2 class="section-title">基本情報</h2>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="info-grid">
+            <div>
+              <div class="info-item-label">通貨</div>
+              <div class="info-item-value">CAD（カナダドル）</div>
+              <div style="font-size:12px;color:var(--c-text-secondary)">1 CAD ≈ 約110円</div>
+            </div>
+            <div>
+              <div class="info-item-label">電圧・プラグ</div>
+              <div class="info-item-value">120V / Aタイプ</div>
+              <div style="font-size:12px;color:var(--c-text-secondary)">日本と同じ形状</div>
+            </div>
+            <div>
+              <div class="info-item-label">チップ</div>
+              <div class="info-item-value">15〜20%</div>
+              <div style="font-size:12px;color:var(--c-text-secondary)">レストラン・タクシー</div>
+            </div>
+            <div>
+              <div class="info-item-label">緊急通報</div>
+              <div class="info-item-value">911</div>
+              <div style="font-size:12px;color:var(--c-text-secondary)">警察・消防・救急共通</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== Hero Photo ===== -->
     <div class="photo-card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Downtown-Skyline-Edmonton-Alberta-Canada-Stitch-01.jpg/1280px-Downtown-Skyline-Edmonton-Alberta-Canada-Stitch-01.jpg"
-           alt="エドモントンのダウンタウン・スカイライン"
-           loading="lazy">
+      <div style="width:100%;height:200px;background:linear-gradient(135deg,#1a5276 0%,#2e86ab 50%,#a3d9e8 100%);display:flex;align-items:center;justify-content:center;">
+        <div style="text-align:center;color:white;">
+          <div style="font-size:3rem;margin-bottom:8px;">🏙️</div>
+          <div style="font-size:14px;opacity:0.9;">Edmonton Skyline</div>
+        </div>
+      </div>
       <div class="photo-card-overlay">
         <div class="photo-card-title">Edmonton, Alberta</div>
         <div class="photo-card-desc">カナダで5番目に大きな都市。北米最大のショッピングモールも。</div>
       </div>
-      <span class="photo-credit">Wikimedia Commons</span>
     </div>
 
     <!-- ===== Schedule ===== -->
@@ -695,7 +769,7 @@
             <div class="timeline-content">
               <div class="timeline-title">関西空港 出発</div>
               <div class="timeline-detail">AC36便 → バンクーバー 11:35着</div>
-              <span class="tag tag-flight">確認番号: RYDPTB</span>
+              <span class="tag tag-flight copyable" onclick="copyText('RYDPTB')" style="cursor:pointer;">確認番号: RYDPTB 📋</span>
             </div>
           </div>
           <div class="timeline-item">
@@ -717,7 +791,7 @@
             <div class="timeline-content">
               <div class="timeline-title">Renaissance Edmonton Airport Hotel チェックイン</div>
               <div class="timeline-detail">空港隣接・徒歩5分</div>
-              <span class="tag tag-hotel">確認番号: 82999487</span>
+              <span class="tag tag-hotel copyable" onclick="copyText('82999487')" style="cursor:pointer;">確認番号: 82999487 📋</span>
             </div>
           </div>
         </div>
@@ -738,7 +812,7 @@
             <div class="timeline-content">
               <div class="timeline-title">JW Marriott へ移動</div>
               <div class="timeline-detail">チェックイン後、Ice District 散策</div>
-              <span class="tag tag-hotel">確認番号: 97803731</span>
+              <span class="tag tag-hotel copyable" onclick="copyText('97803731')" style="cursor:pointer;">確認番号: 97803731 📋</span>
             </div>
           </div>
           <div class="timeline-item">
@@ -832,7 +906,7 @@
             <div class="timeline-content">
               <div class="timeline-title">エドモントン空港 出発</div>
               <div class="timeline-detail">AC8052便 → バンクーバー 7:19着</div>
-              <span class="tag tag-flight">確認番号: RYDPTB</span>
+              <span class="tag tag-flight copyable" onclick="copyText('RYDPTB')" style="cursor:pointer;">確認番号: RYDPTB 📋</span>
             </div>
           </div>
           <div class="timeline-item">
@@ -867,7 +941,7 @@
             <div class="timeline-content">
               <div class="timeline-title">羽田 → 関西</div>
               <div class="timeline-detail">ANA3823便 → 17:20着</div>
-              <span class="tag tag-flight">確認番号: 0138</span>
+              <span class="tag tag-flight copyable" onclick="copyText('0138')" style="cursor:pointer;">確認番号: 0138 📋</span>
             </div>
           </div>
         </div>
@@ -884,7 +958,7 @@
         <div class="hotel-item">
           <div class="hotel-dates">3/3 (火) - 1泊</div>
           <div class="hotel-name">Renaissance Edmonton Airport Hotel</div>
-          <div>確認番号: <span class="hotel-confirm">82999487</span></div>
+          <div>確認番号: <span class="copyable" onclick="copyText('82999487')"><span class="hotel-confirm">82999487</span><span class="copy-icon">📋</span></span></div>
           <div class="hotel-contact">
             <a href="tel:+17804887159">+1-780-488-7159</a>
           </div>
@@ -893,7 +967,7 @@
         <div class="hotel-item">
           <div class="hotel-dates">3/4 (水) 〜 3/7 (土) - 4泊</div>
           <div class="hotel-name">JW Marriott Edmonton ICE District</div>
-          <div>確認番号: <span class="hotel-confirm">97803731</span></div>
+          <div>確認番号: <span class="copyable" onclick="copyText('97803731')"><span class="hotel-confirm">97803731</span><span class="copy-icon">📋</span></span></div>
           <div class="hotel-contact">
             <a href="tel:+17807847950">+1-780-784-7950</a>
           </div>
@@ -909,8 +983,12 @@
 
       <div class="spots-grid">
         <div class="spot-card">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/West_Edmonton_Mall%2C_Edmonton%2C_Alberta_%2821885498380%29.jpg/640px-West_Edmonton_Mall%2C_Edmonton%2C_Alberta_%2821885498380%29.jpg"
-               alt="West Edmonton Mall" loading="lazy">
+          <div style="width:100%;height:160px;background:linear-gradient(135deg,#8e44ad 0%,#3498db 100%);display:flex;align-items:center;justify-content:center;">
+            <div style="text-align:center;color:white;">
+              <div style="font-size:2.5rem;">🛍️</div>
+              <div style="font-size:12px;margin-top:4px;">Shopping</div>
+            </div>
+          </div>
           <div class="spot-card-body">
             <div class="spot-card-name">West Edmonton Mall</div>
             <div class="spot-card-desc">北米最大のショッピングモール。800店舗以上、水族館やプールも。</div>
@@ -918,8 +996,12 @@
         </div>
 
         <div class="spot-card">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Art_Gallery_of_Alberta_2.jpg/640px-Art_Gallery_of_Alberta_2.jpg"
-               alt="Art Gallery of Alberta" loading="lazy">
+          <div style="width:100%;height:160px;background:linear-gradient(135deg,#e74c3c 0%,#f39c12 100%);display:flex;align-items:center;justify-content:center;">
+            <div style="text-align:center;color:white;">
+              <div style="font-size:2.5rem;">🎨</div>
+              <div style="font-size:12px;margin-top:4px;">Art</div>
+            </div>
+          </div>
           <div class="spot-card-body">
             <div class="spot-card-name">Art Gallery of Alberta</div>
             <div class="spot-card-desc">近代的な建築が特徴の美術館。カナダのアート作品を展示。</div>
@@ -927,8 +1009,12 @@
         </div>
 
         <div class="spot-card">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Alberta_Legislature_Building_2.jpg/640px-Alberta_Legislature_Building_2.jpg"
-               alt="Alberta Legislature Building" loading="lazy">
+          <div style="width:100%;height:160px;background:linear-gradient(135deg,#27ae60 0%,#2ecc71 100%);display:flex;align-items:center;justify-content:center;">
+            <div style="text-align:center;color:white;">
+              <div style="font-size:2.5rem;">🏛️</div>
+              <div style="font-size:12px;margin-top:4px;">Legislature</div>
+            </div>
+          </div>
           <div class="spot-card-body">
             <div class="spot-card-name">Alberta Legislature</div>
             <div class="spot-card-desc">歴史ある州議事堂。無料ガイドツアーあり。</div>
@@ -936,8 +1022,12 @@
         </div>
 
         <div class="spot-card">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Rogers_Place_Arena.jpg/640px-Rogers_Place_Arena.jpg"
-               alt="Rogers Place" loading="lazy">
+          <div style="width:100%;height:160px;background:linear-gradient(135deg,#041e42 0%,#ff4c00 100%);display:flex;align-items:center;justify-content:center;">
+            <div style="text-align:center;color:white;">
+              <div style="font-size:2.5rem;">🏒</div>
+              <div style="font-size:12px;margin-top:4px;">Hockey</div>
+            </div>
+          </div>
           <div class="spot-card-body">
             <div class="spot-card-name">Rogers Place</div>
             <div class="spot-card-desc">NHLエドモントン・オイラーズの本拠地。Ice District内。</div>
@@ -1157,8 +1247,31 @@
     </button>
   </div>
 
+  <!-- Copy Toast -->
+  <div class="copy-toast" id="copy-toast">コピーしました</div>
+
   <!-- ===== JavaScript ===== -->
   <script>
+    // Copy to clipboard
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const toast = document.getElementById('copy-toast');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 1500);
+      }).catch(() => {
+        // Fallback for older browsers
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        const toast = document.getElementById('copy-toast');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 1500);
+      });
+    }
+
     // Countdown
     const DEPARTURE = new Date('2026-03-03T19:25:00+09:00');
 
