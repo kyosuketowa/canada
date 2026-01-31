@@ -1,5 +1,5 @@
 // Service Worker for Edmonton Travel Itinerary PWA
-const CACHE_NAME = 'edmonton-itinerary-v6';
+const CACHE_NAME = 'edmonton-itinerary-v7';
 const urlsToCache = [
   './',
   './index.html',
@@ -17,7 +17,9 @@ const urlsToCache = [
   './images/tims.jpg',
   './images/banff.jpg',
   './images/jasper.jpg',
-  './images/winter-street.jpg'
+  './images/winter-street.jpg',
+  './images/hotel-renaissance.jpg',
+  './images/hotel-jw.jpg'
 ];
 
 // Install event - cache resources
