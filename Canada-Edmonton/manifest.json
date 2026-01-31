@@ -1,0 +1,21 @@
+{
+  "name": "枝里子のエドモントン旅行しおり",
+  "short_name": "Edmonton旅行",
+  "description": "森下枝里子さんのカナダ・エドモントン旅行しおり - 2026年3月3日〜8日",
+  "start_url": "./itinerary.html",
+  "display": "standalone",
+  "background_color": "#FFF8F5",
+  "theme_color": "#D52B1E",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./images/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["travel", "lifestyle"],
+  "lang": "ja",
+  "dir": "ltr"
+}
