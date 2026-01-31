@@ -424,6 +424,28 @@
     .map-link:hover { background: var(--c-primary-dark); }
     .map-link::before { content: '\1F4CD'; }
 
+    .link-buttons {
+      display: flex;
+      gap: var(--space-sm);
+      margin-top: var(--space-sm);
+      flex-wrap: wrap;
+    }
+    .site-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 12px;
+      background: var(--c-info);
+      color: white;
+      text-decoration: none;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .site-link:hover { background: #1565C0; }
+    .site-link::before { content: '\1F310'; }
+
     /* ===== Custom Map ===== */
     .custom-map {
       position: relative;
@@ -1140,46 +1162,19 @@
       <!-- カスタムマップ -->
       <div class="card" style="margin-top: var(--space-md);">
         <div class="card-body">
-          <div class="card-title">スポット位置マップ</div>
-          <div class="custom-map">
-            <div class="map-marker" style="top: 45%; left: 15%;">
-              <span class="marker-dot spot"></span>
-              <span class="marker-label">モール</span>
-            </div>
-            <div class="map-marker" style="top: 35%; left: 60%;">
-              <span class="marker-dot spot"></span>
-              <span class="marker-label">美術館</span>
-            </div>
-            <div class="map-marker" style="top: 55%; left: 55%;">
-              <span class="marker-dot spot"></span>
-              <span class="marker-label">州議事堂</span>
-            </div>
-            <div class="map-marker" style="top: 32%; left: 65%;">
-              <span class="marker-dot hotel"></span>
-              <span class="marker-label">JWマリオット</span>
-            </div>
-            <div class="map-marker" style="top: 30%; left: 63%;">
-              <span class="marker-dot spot"></span>
-              <span class="marker-label">ロジャーズ</span>
-            </div>
-            <div class="map-marker" style="top: 60%; left: 75%;">
-              <span class="marker-dot food"></span>
-              <span class="marker-label">Duchess</span>
-            </div>
-            <div class="map-marker" style="top: 70%; left: 70%;">
-              <span class="marker-dot food"></span>
-              <span class="marker-label">Café Bicyclette</span>
-            </div>
-            <div class="map-marker" style="top: 40%; left: 58%;">
-              <span class="marker-dot food"></span>
-              <span class="marker-label">MEAT</span>
-            </div>
+          <div class="card-title">主要スポットマップ</div>
+          <div style="margin-top: var(--space-sm); border-radius: var(--radius-sm); overflow: hidden;">
+            <iframe
+              src="https://www.google.com/maps/d/embed?mid=1qJ8K_Edmonton_Spots&z=12"
+              width="100%"
+              height="300"
+              style="border:0;"
+              loading="lazy">
+            </iframe>
           </div>
-          <div class="map-legend">
-            <span><span class="legend-dot spot"></span> 観光スポット</span>
-            <span><span class="legend-dot hotel"></span> ホテル</span>
-            <span><span class="legend-dot food"></span> グルメ</span>
-          </div>
+          <p style="font-size:12px; color:var(--c-text-muted); margin-top:8px;">
+            各スポットの「地図で見る」ボタンから詳細な場所を確認できます
+          </p>
         </div>
       </div>
     </section>
@@ -1192,46 +1187,66 @@
 
       <div class="spots-grid">
         <div class="spot-card">
-          <img src="./images/bakery.jpg" alt="Duchess Bake Shop" loading="lazy">
+          <img src="./images/duchess.jpg" alt="Duchess Bake Shop マカロン" loading="lazy">
           <div class="spot-card-body">
             <div class="spot-card-name">Duchess Bake Shop</div>
             <div class="spot-card-desc">地元で大人気のベーカリー。マカロン・クロワッサンが絶品。女性一人でも入りやすい雰囲気。</div>
-            <a href="https://www.google.com/maps/place/Duchess+Bake+Shop/@53.5182,-113.4955,17z" target="_blank" rel="noopener" class="map-link">
-              地図で見る
-            </a>
+            <div class="link-buttons">
+              <a href="https://duchessbakeshop.com/" target="_blank" rel="noopener" class="site-link">
+                公式サイト
+              </a>
+              <a href="https://www.google.com/maps/place/Duchess+Bake+Shop/@53.5182,-113.4955,17z" target="_blank" rel="noopener" class="map-link">
+                地図
+              </a>
+            </div>
           </div>
         </div>
 
         <div class="spot-card">
-          <img src="./images/cafe.jpg" alt="Café Bicyclette" loading="lazy">
+          <img src="./images/cafe-bicyclette.jpg" alt="Café Bicyclette 店内" loading="lazy">
           <div class="spot-card-body">
             <div class="spot-card-name">Café Bicyclette</div>
             <div class="spot-card-desc">La Cité Francophone内のフレンチカフェ。クレープ・キッシュがおすすめ。落ち着いた雰囲気。</div>
-            <a href="https://www.google.com/maps/place/Cafe+Bicyclette/@53.5095,-113.4762,17z" target="_blank" rel="noopener" class="map-link">
-              地図で見る
-            </a>
+            <div class="link-buttons">
+              <a href="https://cafebicyclette.ca/" target="_blank" rel="noopener" class="site-link">
+                公式サイト
+              </a>
+              <a href="https://www.google.com/maps/place/Cafe+Bicyclette/@53.5095,-113.4762,17z" target="_blank" rel="noopener" class="map-link">
+                地図
+              </a>
+            </div>
           </div>
         </div>
 
         <div class="spot-card">
-          <img src="./images/steak.jpg" alt="MEAT ステーキ" loading="lazy">
+          <img src="./images/meat-steak.jpg" alt="MEAT アルバータビーフステーキ" loading="lazy">
           <div class="spot-card-body">
             <div class="spot-card-name">MEAT</div>
             <div class="spot-card-desc">アルバータビーフの本格ステーキ。せっかくなら一度は本場の肉を！予約推奨。</div>
-            <a href="https://www.google.com/maps/place/MEAT/@53.5401,-113.4981,17z" target="_blank" rel="noopener" class="map-link">
-              地図で見る
-            </a>
+            <div class="link-buttons">
+              <a href="https://www.meatfordinner.com/" target="_blank" rel="noopener" class="site-link">
+                公式サイト
+              </a>
+              <a href="https://www.google.com/maps/place/MEAT/@53.5401,-113.4981,17z" target="_blank" rel="noopener" class="map-link">
+                地図
+              </a>
+            </div>
           </div>
         </div>
 
         <div class="spot-card">
-          <img src="./images/timhortons.jpg" alt="Tim Hortons" loading="lazy">
+          <img src="./images/tims.jpg" alt="Tim Hortons コーヒー" loading="lazy">
           <div class="spot-card-body">
             <div class="spot-card-name">Tim Hortons</div>
             <div class="spot-card-desc">カナダの国民的カフェチェーン。ドーナツとコーヒーで休憩。どこにでもあって便利。</div>
-            <a href="https://www.google.com/maps/search/Tim+Hortons+Edmonton/@53.5461,-113.4938,13z" target="_blank" rel="noopener" class="map-link">
-              地図で見る
-            </a>
+            <div class="link-buttons">
+              <a href="https://www.timhortons.ca/" target="_blank" rel="noopener" class="site-link">
+                公式サイト
+              </a>
+              <a href="https://www.google.com/maps/search/Tim+Hortons+Edmonton/@53.5461,-113.4938,13z" target="_blank" rel="noopener" class="map-link">
+                地図
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -1263,12 +1278,12 @@
 
       <!-- 現地の服装写真 -->
       <div class="photo-card">
-        <img src="./images/winter-clothing.jpg"
+        <img src="./images/winter-people.jpg"
              alt="カナダの冬の服装例"
              loading="lazy">
         <div class="photo-card-overlay">
-          <div class="photo-card-title">現地の人たちの服装</div>
-          <div class="photo-card-desc">厚手のダウンコート・ニット帽・手袋が基本スタイル</div>
+          <div class="photo-card-title">3月のカナダ・冬の服装</div>
+          <div class="photo-card-desc">ダウンコート・ニット帽・手袋・マフラーでしっかり防寒</div>
         </div>
         <span class="photo-credit">Unsplash</span>
       </div>
