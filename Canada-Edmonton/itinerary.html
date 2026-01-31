@@ -407,6 +407,22 @@
     .spot-card-body { padding: var(--space-md); }
     .spot-card-name { font-weight: 600; margin-bottom: var(--space-xs); }
     .spot-card-desc { font-size: 14px; color: var(--c-text-secondary); }
+    .map-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: var(--space-sm);
+      padding: 6px 12px;
+      background: var(--c-primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .map-link:hover { background: var(--c-primary-dark); }
+    .map-link::before { content: '\1F4CD'; }
 
     /* ===== Checklist ===== */
     .checklist-grid {
@@ -662,8 +678,8 @@
 
       <!-- Time Display -->
       <div class="time-display">
-        <span>日本 <strong id="time-jst">--:--</strong></span>
-        <span>Edmonton <strong id="time-mst">--:--</strong></span>
+        <span>日本時間 <strong id="time-jst">--:--</strong></span>
+        <span>現地時間 <strong id="time-mst">--:--</strong></span>
       </div>
     </div>
   </header>
@@ -676,6 +692,7 @@
       <li><a href="#hotels">宿泊</a></li>
       <li><a href="#spots">観光</a></li>
       <li><a href="#gourmet">グルメ</a></li>
+      <li><a href="#nearby">近郊</a></li>
       <li><a href="#weather">服装</a></li>
       <li><a href="#safety">安全</a></li>
       <li><a href="#checklist">持ち物</a></li>
@@ -741,8 +758,8 @@
            alt="エドモントンの冬景色"
            loading="lazy">
       <div class="photo-card-overlay">
-        <div class="photo-card-title">Edmonton, Alberta</div>
-        <div class="photo-card-desc">カナダで5番目に大きな都市。北米最大のショッピングモールも。</div>
+        <div class="photo-card-title">エドモントン、アルバータ州</div>
+        <div class="photo-card-desc">カナダで5番目に大きな都市。北米最大のショッピングモールがあります。</div>
       </div>
       <span class="photo-credit">Unsplash</span>
     </div>
@@ -1009,34 +1026,46 @@
 
       <div class="spots-grid">
         <div class="spot-card">
-          <img src="./images/mall.jpg" alt="West Edmonton Mall" loading="lazy">
+          <img src="./images/mall.jpg" alt="ウェストエドモントンモール" loading="lazy">
           <div class="spot-card-body">
-            <div class="spot-card-name">West Edmonton Mall</div>
-            <div class="spot-card-desc">北米最大のショッピングモール。800店舗以上、水族館やプールも。</div>
+            <div class="spot-card-name">ウェストエドモントンモール</div>
+            <div class="spot-card-desc">北米最大のショッピングモール。800店舗以上、水族館やウォーターパークも併設。</div>
+            <a href="https://maps.app.goo.gl/WestEdmontonMall" target="_blank" rel="noopener" class="map-link">
+              地図で見る
+            </a>
           </div>
         </div>
 
         <div class="spot-card">
-          <img src="./images/art.jpg" alt="Art Gallery of Alberta" loading="lazy">
+          <img src="./images/art.jpg" alt="アルバータ美術館" loading="lazy">
           <div class="spot-card-body">
-            <div class="spot-card-name">Art Gallery of Alberta</div>
-            <div class="spot-card-desc">近代的な建築が特徴の美術館。カナダのアート作品を展示。</div>
+            <div class="spot-card-name">アルバータ美術館</div>
+            <div class="spot-card-desc">波打つような近代建築が印象的。カナダのアート作品を多数展示。</div>
+            <a href="https://maps.app.goo.gl/ArtGalleryOfAlberta" target="_blank" rel="noopener" class="map-link">
+              地図で見る
+            </a>
           </div>
         </div>
 
         <div class="spot-card">
-          <img src="./images/legislature.jpg" alt="Alberta Legislature Building" loading="lazy">
+          <img src="./images/legislature.jpg" alt="アルバータ州議事堂" loading="lazy">
           <div class="spot-card-body">
-            <div class="spot-card-name">Alberta Legislature</div>
-            <div class="spot-card-desc">歴史ある州議事堂。無料ガイドツアーあり。</div>
+            <div class="spot-card-name">アルバータ州議事堂</div>
+            <div class="spot-card-desc">歴史ある荘厳な建物。無料ガイドツアーで内部見学可能。</div>
+            <a href="https://maps.app.goo.gl/AlbertaLegislature" target="_blank" rel="noopener" class="map-link">
+              地図で見る
+            </a>
           </div>
         </div>
 
         <div class="spot-card">
-          <img src="./images/hockey.jpg" alt="Rogers Place" loading="lazy">
+          <img src="./images/hockey.jpg" alt="ロジャーズプレイス" loading="lazy">
           <div class="spot-card-body">
-            <div class="spot-card-name">Rogers Place</div>
-            <div class="spot-card-desc">NHLエドモントン・オイラーズの本拠地。Ice District内。</div>
+            <div class="spot-card-name">ロジャーズプレイス</div>
+            <div class="spot-card-desc">NHLエドモントン・オイラーズの本拠地。ホテル近くのアイスディストリクト内。</div>
+            <a href="https://maps.app.goo.gl/RogersPlace" target="_blank" rel="noopener" class="map-link">
+              地図で見る
+            </a>
           </div>
         </div>
       </div>
@@ -1050,42 +1079,46 @@
 
       <div class="spots-grid">
         <div class="spot-card">
-          <div style="width:100%;height:160px;background:linear-gradient(135deg,#f8b500 0%,#ff6b6b 100%);display:flex;align-items:center;justify-content:center;">
-            <div style="text-align:center;color:white;font-size:2.5rem;">🥐</div>
-          </div>
+          <img src="./images/bakery.jpg" alt="Duchess Bake Shop" loading="lazy">
           <div class="spot-card-body">
             <div class="spot-card-name">Duchess Bake Shop</div>
             <div class="spot-card-desc">地元で大人気のベーカリー。マカロン・クロワッサンが絶品。女性一人でも入りやすい雰囲気。</div>
+            <a href="https://maps.app.goo.gl/Duchess-Bake-Shop-Edmonton" target="_blank" rel="noopener" class="map-link">
+              地図で見る
+            </a>
           </div>
         </div>
 
         <div class="spot-card">
-          <div style="width:100%;height:160px;background:linear-gradient(135deg,#1e3c72 0%,#2a5298 100%);display:flex;align-items:center;justify-content:center;">
-            <div style="text-align:center;color:white;font-size:2.5rem;">☕</div>
-          </div>
+          <img src="./images/cafe.jpg" alt="Café Bicyclette" loading="lazy">
           <div class="spot-card-body">
             <div class="spot-card-name">Café Bicyclette</div>
             <div class="spot-card-desc">La Cité Francophone内のフレンチカフェ。クレープ・キッシュがおすすめ。落ち着いた雰囲気。</div>
+            <a href="https://maps.app.goo.gl/Cafe-Bicyclette-Edmonton" target="_blank" rel="noopener" class="map-link">
+              地図で見る
+            </a>
           </div>
         </div>
 
         <div class="spot-card">
-          <div style="width:100%;height:160px;background:linear-gradient(135deg,#8b0000 0%,#cc0000 100%);display:flex;align-items:center;justify-content:center;">
-            <div style="text-align:center;color:white;font-size:2.5rem;">🥩</div>
-          </div>
+          <img src="./images/steak.jpg" alt="MEAT ステーキ" loading="lazy">
           <div class="spot-card-body">
             <div class="spot-card-name">MEAT</div>
             <div class="spot-card-desc">アルバータビーフの本格ステーキ。せっかくなら一度は本場の肉を！予約推奨。</div>
+            <a href="https://maps.app.goo.gl/MEAT-Edmonton" target="_blank" rel="noopener" class="map-link">
+              地図で見る
+            </a>
           </div>
         </div>
 
         <div class="spot-card">
-          <div style="width:100%;height:160px;background:linear-gradient(135deg,#c8102e 0%,#8b0000 100%);display:flex;align-items:center;justify-content:center;">
-            <div style="text-align:center;color:white;font-size:2.5rem;">🍩</div>
-          </div>
+          <img src="./images/timhortons.jpg" alt="Tim Hortons" loading="lazy">
           <div class="spot-card-body">
             <div class="spot-card-name">Tim Hortons</div>
             <div class="spot-card-desc">カナダの国民的カフェチェーン。ドーナツとコーヒーで休憩。どこにでもあって便利。</div>
+            <a href="https://maps.app.goo.gl/TimHortons-Edmonton" target="_blank" rel="noopener" class="map-link">
+              地図で見る
+            </a>
           </div>
         </div>
       </div>
@@ -1278,6 +1311,104 @@
             <strong>LRT（軽軌道）:</strong> ダウンタウン〜大学間は無料ゾーン<br>
             <strong>バス:</strong> 1回 $3.50 CAD
           </p>
+        </div>
+      </div>
+
+      <!-- エドモントン地図 -->
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">エドモントン市内マップ</div>
+          <div style="margin-top: var(--space-sm); border-radius: var(--radius-sm); overflow: hidden;">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d152686.68944591026!2d-113.64258!3d53.5461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a0224580deff23%3A0x411fa00c4af6155d!2sEdmonton%2C%20AB%2C%20Canada!5e0!3m2!1sen!2sjp!4v1700000000000!5m2!1sen!2sjp"
+              width="100%"
+              height="250"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Nearby Cities ===== -->
+    <section id="nearby" class="section">
+      <div class="section-header">
+        <h2 class="section-title">近郊の見どころ</h2>
+      </div>
+
+      <div class="alert alert-info">
+        <span class="alert-icon" aria-hidden="true">i</span>
+        <div class="alert-content">
+          <div class="alert-title">日帰り・1泊旅行も可能</div>
+          <p class="alert-text">エドモントンからカナディアンロッキーへアクセスできます。次回の旅行の参考に！</p>
+        </div>
+      </div>
+
+      <div class="spots-grid">
+        <div class="spot-card">
+          <img src="./images/banff.jpg" alt="バンフ国立公園" loading="lazy">
+          <div class="spot-card-body">
+            <div class="spot-card-name">バンフ国立公園</div>
+            <div class="spot-card-desc">
+              カナダ最古の国立公園。エメラルドグリーンの湖と雄大な山々。
+              エドモントンから車で約4時間。
+            </div>
+            <div style="font-size:13px; color:var(--c-text-secondary); margin-top:8px;">
+              見どころ: レイク・ルイーズ、モレーン湖、バンフ温泉
+            </div>
+            <a href="https://maps.app.goo.gl/BanffNationalPark" target="_blank" rel="noopener" class="map-link">
+              地図で見る
+            </a>
+          </div>
+        </div>
+
+        <div class="spot-card">
+          <img src="./images/jasper.jpg" alt="ジャスパー国立公園" loading="lazy">
+          <div class="spot-card-body">
+            <div class="spot-card-name">ジャスパー国立公園</div>
+            <div class="spot-card-desc">
+              カナディアンロッキー最大の国立公園。野生動物との遭遇も。
+              エドモントンから車で約3.5時間。
+            </div>
+            <div style="font-size:13px; color:var(--c-text-secondary); margin-top:8px;">
+              見どころ: コロンビア大氷原、マリーン湖、スカイトラム
+            </div>
+            <a href="https://maps.app.goo.gl/JasperNationalPark" target="_blank" rel="noopener" class="map-link">
+              地図で見る
+            </a>
+          </div>
+        </div>
+
+        <div class="spot-card">
+          <img src="./images/hero.jpg" alt="カルガリー" loading="lazy">
+          <div class="spot-card-body">
+            <div class="spot-card-name">カルガリー</div>
+            <div class="spot-card-desc">
+              アルバータ州最大の都市。カウボーイ文化と近代的なダウンタウン。
+              エドモントンから車で約3時間。
+            </div>
+            <div style="font-size:13px; color:var(--c-text-secondary); margin-top:8px;">
+              見どころ: カルガリータワー、スタンピード（7月）、動物園
+            </div>
+            <a href="https://maps.app.goo.gl/Calgary" target="_blank" rel="noopener" class="map-link">
+              地図で見る
+            </a>
+          </div>
+        </div>
+
+        <div class="spot-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+          <div style="padding: var(--space-lg); text-align: center;">
+            <div style="font-size: 2rem; margin-bottom: var(--space-sm);">
+              アイスフィールド・パークウェイ
+            </div>
+            <div style="font-size: 14px; opacity: 0.9;">
+              バンフ〜ジャスパーを結ぶ絶景ドライブルート（約230km）<br>
+              世界で最も美しいドライブコースの一つ
+            </div>
+          </div>
         </div>
       </div>
     </section>
