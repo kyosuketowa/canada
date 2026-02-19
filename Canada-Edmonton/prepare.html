@@ -138,6 +138,16 @@
         </div>
 
         <div class="checklist-category">
+          <div class="checklist-category-title">スマホ設定（出発前）</div>
+          <label class="checklist-item"><input type="checkbox" data-key="app-uber"><span>Uberアプリ設定・カード登録</span></label>
+          <label class="checklist-item"><input type="checkbox" data-key="app-maps"><span>Google Maps オフライン地図DL</span></label>
+          <label class="checklist-item"><input type="checkbox" data-key="app-translate"><span>Google翻訳 オフラインDL</span></label>
+          <label class="checklist-item"><input type="checkbox" data-key="app-esim"><span>eSIM/ローミング設定確認</span></label>
+          <label class="checklist-item"><input type="checkbox" data-key="app-wallet"><span>Apple Pay/Google Pay設定</span></label>
+          <label class="checklist-item"><input type="checkbox" data-key="app-docs"><span>重要書類の写真保存</span></label>
+        </div>
+
+        <div class="checklist-category">
           <div class="checklist-category-title">日用品</div>
           <label class="checklist-item"><input type="checkbox" data-key="medicine"><span>常備薬</span></label>
           <label class="checklist-item"><input type="checkbox" data-key="skincare"><span>スキンケア用品</span></label>
@@ -151,6 +161,247 @@
         <span class="alert-icon">i</span>
         <div class="alert-content">
           <p class="alert-text">チェックした項目は自動保存されます。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- スマホ準備ガイド -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">スマホ準備ガイド</h2>
+      </div>
+
+      <div class="alert alert-warning">
+        <span class="alert-icon">!</span>
+        <div class="alert-content">
+          <div class="alert-title">出発前に必ず設定を</div>
+          <p class="alert-text">現地でネット接続できないと設定できないアプリもあります。日本で準備しておきましょう。</p>
+        </div>
+      </div>
+
+      <!-- Uber設定 -->
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">Uber アプリ設定</div>
+          <p style="font-size:14px;color:var(--c-text-secondary);margin-bottom:var(--space-md);">
+            カナダでの移動はUberが便利で安全。事前設定で現地ですぐ使えます。
+          </p>
+
+          <div style="background:var(--c-bg-muted);border-radius:var(--radius-sm);padding:var(--space-md);margin-bottom:var(--space-md);">
+            <div style="font-weight:600;margin-bottom:var(--space-sm);">事前準備ステップ</div>
+            <ol style="padding-left:var(--space-md);font-size:13px;color:var(--c-text-secondary);margin:0;">
+              <li style="margin-bottom:8px;">App Store/Google PlayからUberアプリをダウンロード</li>
+              <li style="margin-bottom:8px;">電話番号でアカウント作成（日本の番号でOK）</li>
+              <li style="margin-bottom:8px;">クレジットカードを登録（Visa/Master推奨）</li>
+              <li style="margin-bottom:8px;">「安全機能」で緊急連絡先を設定</li>
+              <li>日本語設定のまま海外でも使用可能</li>
+            </ol>
+          </div>
+
+          <div style="background:var(--c-bg-muted);border-radius:var(--radius-sm);padding:var(--space-md);margin-bottom:var(--space-md);">
+            <div style="font-weight:600;margin-bottom:var(--space-sm);">現地での使い方</div>
+            <ol style="padding-left:var(--space-md);font-size:13px;color:var(--c-text-secondary);margin:0;">
+              <li style="margin-bottom:8px;">アプリを開いて目的地を入力</li>
+              <li style="margin-bottom:8px;">料金と到着時間を確認して配車リクエスト</li>
+              <li style="margin-bottom:8px;">ドライバーの顔写真・車種・ナンバーを確認</li>
+              <li style="margin-bottom:8px;">乗車前に「Are you [driver name]?」と確認</li>
+              <li>到着後、自動でカード決済（チップは任意）</li>
+            </ol>
+          </div>
+
+          <div style="display:grid;gap:var(--space-xs);font-size:13px;">
+            <div style="display:flex;justify-content:space-between;padding:var(--space-xs) var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <span>空港 → Renaissance Hotel</span>
+              <strong>$15-20 CAD</strong>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:var(--space-xs) var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <span>空港 → ダウンタウン</span>
+              <strong>$50-60 CAD</strong>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:var(--space-xs) var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <span>ダウンタウン → West Edmonton Mall</span>
+              <strong>$20-25 CAD</strong>
+            </div>
+          </div>
+
+          <div class="link-buttons" style="margin-top:var(--space-md);">
+            <a href="https://apps.apple.com/app/uber/id368677368" target="_blank" rel="noopener" class="site-link">iOS版</a>
+            <a href="https://play.google.com/store/apps/details?id=com.ubercab" target="_blank" rel="noopener" class="site-link">Android版</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- オフラインマップ -->
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">Google Maps オフライン地図</div>
+          <p style="font-size:14px;color:var(--c-text-secondary);margin-bottom:var(--space-md);">
+            Wi-Fiがない場所でも地図を使えるように、エリアをダウンロードしておきましょう。
+          </p>
+
+          <div style="background:var(--c-bg-muted);border-radius:var(--radius-sm);padding:var(--space-md);margin-bottom:var(--space-md);">
+            <div style="font-weight:600;margin-bottom:var(--space-sm);">ダウンロード手順</div>
+            <ol style="padding-left:var(--space-md);font-size:13px;color:var(--c-text-secondary);margin:0;">
+              <li style="margin-bottom:8px;">Google Mapsアプリを開く</li>
+              <li style="margin-bottom:8px;">検索バーに「Edmonton」と入力</li>
+              <li style="margin-bottom:8px;">画面下の「Edmonton」をタップ</li>
+              <li style="margin-bottom:8px;">右上の「︙」→「オフラインマップをダウンロード」</li>
+              <li>エリアを選択してダウンロード（約150MB）</li>
+            </ol>
+          </div>
+
+          <div class="alert alert-info" style="margin:0;">
+            <span class="alert-icon">i</span>
+            <div class="alert-content">
+              <p class="alert-text">ジャスパー・バンフに行く場合は、そのエリアも別途ダウンロードしておくと安心です。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIM/eSIM -->
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">通信手段（SIM/eSIM）</div>
+          <p style="font-size:14px;color:var(--c-text-secondary);margin-bottom:var(--space-md);">
+            現地でデータ通信するための選択肢です。
+          </p>
+
+          <div style="display:grid;gap:var(--space-sm);">
+            <div style="padding:var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <div style="font-weight:600;color:var(--c-primary);">eSIM（おすすめ）</div>
+              <div style="font-size:13px;color:var(--c-text-secondary);margin-top:4px;">
+                Airalo、Ubigi等で事前購入。SIMカード不要で設定も簡単。<br>
+                7日間 3GB: 約$10-15 USD
+              </div>
+            </div>
+            <div style="padding:var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <div style="font-weight:600;">海外ローミング</div>
+              <div style="font-size:13px;color:var(--c-text-secondary);margin-top:4px;">
+                ドコモ・au・ソフトバンクの海外パケット定額。<br>
+                1日約2,980円〜（契約プランによる）
+              </div>
+            </div>
+            <div style="padding:var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <div style="font-weight:600;">ポケットWi-Fi</div>
+              <div style="font-size:13px;color:var(--c-text-secondary);margin-top:4px;">
+                空港でレンタル可能。複数デバイス接続OK。<br>
+                1日約1,000-1,500円
+              </div>
+            </div>
+          </div>
+
+          <div class="link-buttons" style="margin-top:var(--space-md);">
+            <a href="https://www.airalo.com/japan" target="_blank" rel="noopener" class="site-link">Airalo eSIM</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 必須アプリ -->
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">おすすめアプリ</div>
+          <div style="display:grid;gap:var(--space-sm);margin-top:var(--space-sm);">
+            <div style="display:flex;gap:var(--space-sm);padding:var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <div style="font-size:1.5rem;">🚗</div>
+              <div>
+                <div style="font-weight:600;">Uber</div>
+                <div style="font-size:12px;color:var(--c-text-muted);">タクシー配車・料金事前確認</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:var(--space-sm);padding:var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <div style="font-size:1.5rem;">🗺️</div>
+              <div>
+                <div style="font-weight:600;">Google Maps</div>
+                <div style="font-size:12px;color:var(--c-text-muted);">地図・ナビ・オフライン対応</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:var(--space-sm);padding:var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <div style="font-size:1.5rem;">🌤️</div>
+              <div>
+                <div style="font-weight:600;">Weather Network</div>
+                <div style="font-size:12px;color:var(--c-text-muted);">カナダの天気予報（体感温度表示）</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:var(--space-sm);padding:var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <div style="font-size:1.5rem;">💱</div>
+              <div>
+                <div style="font-weight:600;">Currency</div>
+                <div style="font-size:12px;color:var(--c-text-muted);">為替計算（オフライン対応あり）</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:var(--space-sm);padding:var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <div style="font-size:1.5rem;">🗣️</div>
+              <div>
+                <div style="font-weight:600;">Google 翻訳</div>
+                <div style="font-size:12px;color:var(--c-text-muted);">カメラ翻訳・会話モード</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:var(--space-sm);padding:var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <div style="font-size:1.5rem;">✈️</div>
+              <div>
+                <div style="font-weight:600;">Flightradar24</div>
+                <div style="font-size:12px;color:var(--c-text-muted);">フライト追跡・遅延通知</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 重要書類の写真保存 -->
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">書類の写真を保存</div>
+          <p style="font-size:14px;color:var(--c-text-secondary);margin-bottom:var(--space-md);">
+            万が一の紛失に備えて、以下の書類をスマホで撮影しておきましょう。
+          </p>
+          <div style="display:grid;gap:var(--space-xs);font-size:14px;">
+            <label style="display:flex;align-items:center;gap:var(--space-sm);padding:var(--space-xs) var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <input type="checkbox" data-key="photo-passport">
+              <span>パスポート（顔写真ページ）</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:var(--space-sm);padding:var(--space-xs) var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <input type="checkbox" data-key="photo-eta">
+              <span>eTA承認メール</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:var(--space-sm);padding:var(--space-xs) var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <input type="checkbox" data-key="photo-ticket">
+              <span>航空券（Eチケット控え）</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:var(--space-sm);padding:var(--space-xs) var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <input type="checkbox" data-key="photo-hotel">
+              <span>ホテル予約確認書</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:var(--space-sm);padding:var(--space-xs) var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <input type="checkbox" data-key="photo-insurance">
+              <span>海外旅行保険証</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:var(--space-sm);padding:var(--space-xs) var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <input type="checkbox" data-key="photo-card">
+              <span>クレジットカード（表・裏）</span>
+            </label>
+          </div>
+          <div class="alert alert-info" style="margin-top:var(--space-md);margin-bottom:0;">
+            <span class="alert-icon">i</span>
+            <div class="alert-content">
+              <p class="alert-text">iCloudやGoogle Driveにもバックアップしておくと安心です。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Apple Pay / Google Pay -->
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">Apple Pay / Google Pay</div>
+          <p style="font-size:14px;color:var(--c-text-secondary);margin-bottom:var(--space-sm);">
+            カナダではコンタクトレス決済が普及しています。Wallet にカードを登録しておくと便利です。
+          </p>
+          <ul style="padding-left:var(--space-md);font-size:13px;color:var(--c-text-secondary);">
+            <li style="margin-bottom:6px;">スーパー・コンビニ・カフェで使用可能</li>
+            <li style="margin-bottom:6px;">チップ付きの場合は物理カードが必要な場合も</li>
+            <li>念のため物理カードも持参しましょう</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -187,9 +438,8 @@
   </main>
 
   <script>
-    // チェックリストの状態を保存・復元
-    const checklist = document.getElementById('checklist');
-    const checkboxes = checklist.querySelectorAll('input[type="checkbox"]');
+    // ページ内全てのチェックボックスの状態を保存・復元
+    const checkboxes = document.querySelectorAll('input[type="checkbox"][data-key]');
 
     // 復元
     checkboxes.forEach(cb => {
@@ -200,8 +450,8 @@
     });
 
     // 保存
-    checklist.addEventListener('change', (e) => {
-      if (e.target.type === 'checkbox') {
+    document.addEventListener('change', (e) => {
+      if (e.target.type === 'checkbox' && e.target.dataset.key) {
         const key = e.target.dataset.key;
         localStorage.setItem('checklist-' + key, e.target.checked);
       }
