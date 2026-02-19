@@ -1,9 +1,15 @@
 // Service Worker for Edmonton Travel Itinerary PWA
-const CACHE_NAME = 'edmonton-itinerary-v7';
+const CACHE_NAME = 'edmonton-itinerary-v8';
 const urlsToCache = [
   './',
   './index.html',
-  './itinerary.html',
+  './schedule.html',
+  './hotels.html',
+  './spots.html',
+  './gourmet.html',
+  './prepare.html',
+  './basic.html',
+  './styles.css',
   './manifest.json',
   './images/icon.svg',
   './images/hero.jpg',

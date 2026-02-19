@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>準備 - エドモントン旅行しおり</title>
+  <link rel="icon" type="image/svg+xml" href="./images/icon.svg">
+  <link rel="stylesheet" href="./styles.css">
+  <meta name="theme-color" content="#D52B1E">
+</head>
+<body>
+  <header class="page-header">
+    <h1 class="page-title">旅行の準備</h1>
+    <p class="page-subtitle">服装・安全・持ち物チェック</p>
+  </header>
+
+  <nav class="top-nav">
+    <ul class="nav-list">
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="schedule.html">日程</a></li>
+      <li><a href="hotels.html">宿泊</a></li>
+      <li><a href="spots.html">観光</a></li>
+      <li><a href="gourmet.html">グルメ</a></li>
+      <li><a href="prepare.html" class="active">準備</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- 服装セクション -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">3月のエドモントンの服装</h2>
+      </div>
+
+      <div class="alert alert-warning">
+        <span class="alert-icon">!</span>
+        <div class="alert-content">
+          <div class="alert-title">気温: -15℃〜-5℃</div>
+          <p class="alert-text">3月でもまだ真冬です。防寒対策は万全に！</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="./images/winter-street.jpg" alt="エドモントンの冬の服装" style="width:100%;height:200px;object-fit:cover;">
+        <div class="card-body">
+          <div class="card-title">必須アイテム</div>
+          <ul style="padding-left:var(--space-md);font-size:14px;color:var(--c-text-secondary);">
+            <li style="margin-bottom:8px;"><strong>ダウンジャケット:</strong> 膝丈以上の長めがおすすめ</li>
+            <li style="margin-bottom:8px;"><strong>ニット帽:</strong> 耳を覆えるもの必須</li>
+            <li style="margin-bottom:8px;"><strong>手袋:</strong> 防水・防風タイプ</li>
+            <li style="margin-bottom:8px;"><strong>マフラー/ネックウォーマー:</strong> 首元の防寒</li>
+            <li style="margin-bottom:8px;"><strong>ヒートテック:</strong> 上下セットで</li>
+            <li><strong>防水ブーツ:</strong> 雪道対応・滑りにくいもの</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="alert alert-info">
+        <span class="alert-icon">i</span>
+        <div class="alert-content">
+          <div class="alert-title">室内は暖かい</div>
+          <p class="alert-text">屋内はしっかり暖房が効いています。脱ぎ着しやすい服装がおすすめ。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 安全情報 -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">安全情報</h2>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">緊急連絡先</div>
+          <div style="display:grid;gap:var(--space-sm);font-size:14px;">
+            <a href="tel:911" style="display:flex;justify-content:space-between;padding:var(--space-sm);background:var(--c-danger);color:white;border-radius:var(--radius-sm);text-decoration:none;">
+              <span>緊急通報（警察・消防・救急）</span>
+              <strong>911</strong>
+            </a>
+            <a href="tel:+14032940782" style="display:flex;justify-content:space-between;padding:var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);text-decoration:none;color:inherit;">
+              <span>在カルガリー日本総領事館</span>
+              <strong>+1-403-294-0782</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">安全上の注意</div>
+          <ul style="padding-left:var(--space-md);font-size:14px;color:var(--c-text-secondary);">
+            <li style="margin-bottom:8px;">夜間の一人歩きは避ける（特にダウンタウン外）</li>
+            <li style="margin-bottom:8px;">貴重品は分散して持つ</li>
+            <li style="margin-bottom:8px;">パスポートのコピーを別に保管</li>
+            <li style="margin-bottom:8px;">海外旅行保険に加入しておく</li>
+            <li>凍結した道路での転倒に注意</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 持ち物チェックリスト -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">持ち物チェックリスト</h2>
+      </div>
+
+      <div class="checklist" id="checklist">
+        <div class="checklist-category">
+          <div class="checklist-category-title">貴重品・書類</div>
+          <label class="checklist-item"><input type="checkbox" data-key="passport"><span>パスポート（有効期限確認）</span></label>
+          <label class="checklist-item"><input type="checkbox" data-key="eta"><span>eTA（電子渡航認証）</span></label>
+          <label class="checklist-item"><input type="checkbox" data-key="ticket"><span>航空券（Eチケット控え）</span></label>
+          <label class="checklist-item"><input type="checkbox" data-key="hotel"><span>ホテル予約確認書</span></label>
+          <label class="checklist-item"><input type="checkbox" data-key="insurance"><span>海外旅行保険証</span></label>
+          <label class="checklist-item"><input type="checkbox" data-key="card"><span>クレジットカード</span></label>
+          <label class="checklist-item"><input type="checkbox" data-key="cash"><span>現金（CAD）</span></label>
+        </div>
+
+        <div class="checklist-category">
+          <div class="checklist-category-title">防寒着</div>
+          <label class="checklist-item"><input type="checkbox" data-key="down"><span>ダウンジャケット</span></label>
+          <label class="checklist-item"><input type="checkbox" data-key="hat"><span>ニット帽</span></label>
+          <label class="checklist-item"><input type="checkbox" data-key="gloves"><span>手袋</span></label>
+          <label class="checklist-item"><input type="checkbox" data-key="scarf"><span>マフラー/ネックウォーマー</span></label>
+          <label class="checklist-item"><input type="checkbox" data-key="heattech"><span>ヒートテック上下</span></label>
+          <label class="checklist-item"><input type="checkbox" data-key="boots"><span>防水ブーツ</span></label>
+        </div>
+
+        <div class="checklist-category">
+          <div class="checklist-category-title">電子機器</div>
+          <label class="checklist-item"><input type="checkbox" data-key="phone"><span>スマートフォン</span></label>
+          <label class="checklist-item"><input type="checkbox" data-key="charger"><span>充電器・ケーブル</span></label>
+          <label class="checklist-item"><input type="checkbox" data-key="adapter"><span>変換プラグ（不要・日本と同じ）</span></label>
+          <label class="checklist-item"><input type="checkbox" data-key="battery"><span>モバイルバッテリー</span></label>
+          <label class="checklist-item"><input type="checkbox" data-key="camera"><span>カメラ</span></label>
+        </div>
+
+        <div class="checklist-category">
+          <div class="checklist-category-title">日用品</div>
+          <label class="checklist-item"><input type="checkbox" data-key="medicine"><span>常備薬</span></label>
+          <label class="checklist-item"><input type="checkbox" data-key="skincare"><span>スキンケア用品</span></label>
+          <label class="checklist-item"><input type="checkbox" data-key="lipbalm"><span>リップクリーム（乾燥対策）</span></label>
+          <label class="checklist-item"><input type="checkbox" data-key="sunglasses"><span>サングラス（雪の反射対策）</span></label>
+          <label class="checklist-item"><input type="checkbox" data-key="mask"><span>マスク</span></label>
+        </div>
+      </div>
+
+      <div class="alert alert-info" style="margin-top:var(--space-md);">
+        <span class="alert-icon">i</span>
+        <div class="alert-content">
+          <p class="alert-text">チェックした項目は自動保存されます。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- eTA情報 -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">eTA（電子渡航認証）</h2>
+      </div>
+
+      <div class="alert alert-warning">
+        <span class="alert-icon">!</span>
+        <div class="alert-content">
+          <div class="alert-title">カナダ入国には必須</div>
+          <p class="alert-text">出発前に必ず取得してください。申請は公式サイトから。</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">eTA申請情報</div>
+          <ul style="padding-left:var(--space-md);font-size:14px;color:var(--c-text-secondary);">
+            <li style="margin-bottom:8px;"><strong>申請料:</strong> CAD $7（約750円）</li>
+            <li style="margin-bottom:8px;"><strong>有効期限:</strong> 5年間（またはパスポート有効期限まで）</li>
+            <li style="margin-bottom:8px;"><strong>申請時間:</strong> 通常数分で承認</li>
+            <li><strong>必要なもの:</strong> パスポート、クレジットカード、メールアドレス</li>
+          </ul>
+          <div class="link-buttons" style="margin-top:var(--space-md);">
+            <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/eta/apply-ja.html" target="_blank" rel="noopener" class="site-link">eTA公式申請サイト</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // チェックリストの状態を保存・復元
+    const checklist = document.getElementById('checklist');
+    const checkboxes = checklist.querySelectorAll('input[type="checkbox"]');
+
+    // 復元
+    checkboxes.forEach(cb => {
+      const key = cb.dataset.key;
+      if (localStorage.getItem('checklist-' + key) === 'true') {
+        cb.checked = true;
+      }
+    });
+
+    // 保存
+    checklist.addEventListener('change', (e) => {
+      if (e.target.type === 'checkbox') {
+        const key = e.target.dataset.key;
+        localStorage.setItem('checklist-' + key, e.target.checked);
+      }
+    });
+  </script>
+</body>
+</html>
