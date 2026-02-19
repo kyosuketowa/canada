@@ -6,7 +6,7 @@
   <title>枝里子へ - エドモントン旅行しおり</title>
   <link rel="icon" type="image/svg+xml" href="./images/icon.svg">
   <link rel="manifest" href="./manifest.json">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./styles.css?v=20260219">
   <meta name="theme-color" content="#D52B1E">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -67,6 +67,41 @@
     @media (min-width: 600px) {
       .quick-info { grid-template-columns: repeat(4, 1fr); }
     }
+    .sticky-info {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: white;
+      padding: 10px var(--space-md);
+      padding-bottom: calc(10px + env(safe-area-inset-bottom));
+      z-index: 1000;
+      font-size: 12px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+    }
+    .sticky-info-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-sm);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .sticky-info-item {
+      text-align: center;
+    }
+    .sticky-info-label {
+      font-size: 9px;
+      opacity: 0.7;
+      text-transform: uppercase;
+    }
+    .sticky-info-value {
+      font-weight: 700;
+      font-family: monospace;
+      font-size: 13px;
+    }
+    main { padding-bottom: 70px; }
   </style>
 </head>
 <body>
@@ -141,11 +176,11 @@
   <main>
     <!-- Alerts -->
     <section class="section">
-      <div class="alert alert-warning">
-        <span class="alert-icon">!</span>
+      <div class="alert alert-info">
+        <span class="alert-icon">✓</span>
         <div class="alert-content">
-          <div class="alert-title">eTA（電子渡航認証）</div>
-          <p class="alert-text">カナダ入国にはeTAが必要です。出発前に必ず確認してください。</p>
+          <div class="alert-title">eTA 取得済み</div>
+          <p class="alert-text">パスポートに紐づけ済みです。入国時は自動認証されます。</p>
         </div>
       </div>
 
@@ -218,6 +253,28 @@
     <div class="footer-message">いってらっしゃい！素敵な旅を</div>
     <div class="footer-from">恭祐より</div>
   </footer>
+
+  <!-- Sticky Info Banner -->
+  <div class="sticky-info">
+    <div class="sticky-info-grid">
+      <div class="sticky-info-item">
+        <div class="sticky-info-label">搭乗者</div>
+        <div class="sticky-info-value">MORISHITA E.</div>
+      </div>
+      <div class="sticky-info-item">
+        <div class="sticky-info-label">往路予約</div>
+        <div class="sticky-info-value">FDNLN4</div>
+      </div>
+      <div class="sticky-info-item">
+        <div class="sticky-info-label">復路予約</div>
+        <div class="sticky-info-value">FDPLGK</div>
+      </div>
+      <div class="sticky-info-item">
+        <div class="sticky-info-label">緊急</div>
+        <div class="sticky-info-value"><a href="tel:911" style="color:#ff6b6b;">911</a></div>
+      </div>
+    </div>
+  </div>
 
   <!-- Emergency FAB -->
   <div class="fab-emergency">
