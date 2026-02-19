@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>基本情報 - エドモントン旅行しおり</title>
+  <link rel="icon" type="image/svg+xml" href="./images/icon.svg">
+  <link rel="stylesheet" href="./styles.css">
+  <meta name="theme-color" content="#D52B1E">
+</head>
+<body>
+  <header class="page-header">
+    <h1 class="page-title">基本情報</h1>
+    <p class="page-subtitle">通貨・時差・交通・便利情報</p>
+  </header>
+
+  <nav class="top-nav">
+    <ul class="nav-list">
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="schedule.html">日程</a></li>
+      <li><a href="hotels.html">宿泊</a></li>
+      <li><a href="spots.html">観光</a></li>
+      <li><a href="gourmet.html">グルメ</a></li>
+      <li><a href="prepare.html">準備</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- 時差 -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">時差</h2>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div style="display:flex;justify-content:space-around;text-align:center;padding:var(--space-md) 0;">
+            <div>
+              <div style="font-size:12px;color:var(--c-text-muted);">日本時間</div>
+              <div style="font-size:1.5rem;font-weight:700;" id="time-jst">--:--</div>
+            </div>
+            <div style="display:flex;align-items:center;font-size:1.5rem;color:var(--c-text-muted);">→</div>
+            <div>
+              <div style="font-size:12px;color:var(--c-text-muted);">エドモントン</div>
+              <div style="font-size:1.5rem;font-weight:700;color:var(--c-primary);" id="time-mst">--:--</div>
+            </div>
+          </div>
+          <div style="text-align:center;padding:var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+            <strong>時差: -16時間</strong>（MST: 山岳部標準時）
+          </div>
+          <div style="margin-top:var(--space-md);font-size:14px;color:var(--c-text-secondary);">
+            <p>例: 日本が夜21時 → エドモントンは朝5時（同日）</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 通貨 -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">通貨・お金</h2>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">カナダドル（CAD）</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);margin-top:var(--space-sm);">
+            <div style="text-align:center;padding:var(--space-md);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <div style="font-size:12px;color:var(--c-text-muted);">1 CAD</div>
+              <div style="font-size:1.3rem;font-weight:600;">≈ 107円</div>
+              <div style="font-size:11px;color:var(--c-text-muted);">※レート変動あり</div>
+            </div>
+            <div style="text-align:center;padding:var(--space-md);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <div style="font-size:12px;color:var(--c-text-muted);">1000円</div>
+              <div style="font-size:1.3rem;font-weight:600;">≈ 9.3 CAD</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">支払い方法</div>
+          <ul style="padding-left:var(--space-md);font-size:14px;color:var(--c-text-secondary);">
+            <li style="margin-bottom:8px;"><strong>クレジットカード:</strong> ほぼどこでも使えます。Visa/Masterがおすすめ</li>
+            <li style="margin-bottom:8px;"><strong>現金:</strong> 少額（$100-200程度）持っておくと安心</li>
+            <li style="margin-bottom:8px;"><strong>チップ:</strong> レストラン15-20%、タクシー15%、ホテル$2-5</li>
+            <li><strong>税金:</strong> 表示価格+5%（GST）が加算されます</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 交通 -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">交通・タクシー</h2>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">Uber（おすすめ）</div>
+          <p style="font-size:14px;color:var(--c-text-secondary);margin-bottom:var(--space-sm);">アプリで簡単配車。料金も事前確認できて安心。</p>
+          <div style="display:grid;gap:var(--space-xs);font-size:13px;">
+            <div style="display:flex;justify-content:space-between;padding:var(--space-xs) var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <span>空港 → ダウンタウン</span>
+              <strong>$50-60 CAD</strong>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:var(--space-xs) var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <span>ダウンタウン → West Edmonton Mall</span>
+              <strong>$20-25 CAD</strong>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:var(--space-xs) var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <span>ダウンタウン → Old Strathcona</span>
+              <strong>$12-15 CAD</strong>
+            </div>
+          </div>
+          <div class="link-buttons" style="margin-top:var(--space-sm);">
+            <a href="https://www.uber.com/" target="_blank" rel="noopener" class="site-link">Uber アプリ</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">タクシー会社</div>
+          <div style="display:grid;gap:var(--space-sm);margin-top:var(--space-sm);">
+            <a href="tel:+17804623456" style="display:flex;justify-content:space-between;align-items:center;padding:var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);text-decoration:none;color:inherit;">
+              <div>
+                <div style="font-weight:600;">Yellow Cab Edmonton</div>
+                <div style="font-size:12px;color:var(--c-text-muted);">24時間対応</div>
+              </div>
+              <div style="font-size:13px;color:var(--c-primary);">+1-780-462-3456</div>
+            </a>
+            <a href="tel:+17804255588" style="display:flex;justify-content:space-between;align-items:center;padding:var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);text-decoration:none;color:inherit;">
+              <div>
+                <div style="font-weight:600;">Co-op Taxi</div>
+                <div style="font-size:12px;color:var(--c-text-muted);">24時間対応</div>
+              </div>
+              <div style="font-size:13px;color:var(--c-primary);">+1-780-425-5588</div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">空港からダウンタウン</div>
+          <div style="display:grid;gap:var(--space-sm);margin-top:var(--space-sm);">
+            <div style="padding:var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <div style="font-weight:600;">タクシー / Uber</div>
+              <div style="font-size:13px;color:var(--c-text-secondary);">約30分 / $50-60 CAD（おすすめ）</div>
+            </div>
+            <div style="padding:var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <div style="font-weight:600;">Sky Shuttle</div>
+              <div style="font-size:13px;color:var(--c-text-secondary);">約45分 / $18 CAD（要予約）</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">市内移動</div>
+          <ul style="padding-left:var(--space-md);font-size:14px;color:var(--c-text-secondary);">
+            <li style="margin-bottom:8px;"><strong>LRT（ライトレール）:</strong> ダウンタウン〜各地区を結ぶ。$3.50/回</li>
+            <li style="margin-bottom:8px;"><strong>バス:</strong> ETS（Edmonton Transit）運行。$3.50/回</li>
+            <li style="margin-bottom:8px;"><strong>Uber / Lyft:</strong> アプリで配車。便利で安全</li>
+            <li><strong>徒歩:</strong> ダウンタウン・Ice Districtは徒歩圏内</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="alert alert-info">
+        <span class="alert-icon">i</span>
+        <div class="alert-content">
+          <div class="alert-title">冬の移動Tips</div>
+          <p class="alert-text">地下通路（Pedway）でダウンタウンの主要ビルが繋がっています。寒い日は活用を！</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 電源・通信 -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">電源・通信</h2>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);">
+            <div>
+              <div class="card-title">電圧・プラグ</div>
+              <p style="font-size:14px;color:var(--c-text-secondary);margin-top:var(--space-xs);">
+                120V / 60Hz<br>
+                プラグ: Aタイプ<br>
+                <strong style="color:var(--c-success);">日本と同じ！変換不要</strong>
+              </p>
+            </div>
+            <div>
+              <div class="card-title">インターネット</div>
+              <p style="font-size:14px;color:var(--c-text-secondary);margin-top:var(--space-xs);">
+                ホテル: 無料Wi-Fi<br>
+                モール: 無料Wi-Fi<br>
+                カフェ: 無料Wi-Fi多数
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 便利な英語フレーズ -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">便利な英語フレーズ</h2>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div style="display:grid;gap:var(--space-sm);font-size:14px;">
+            <div style="padding:var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <div style="font-weight:600;">Could I have the bill, please?</div>
+              <div style="color:var(--c-text-secondary);">お会計をお願いします</div>
+            </div>
+            <div style="padding:var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <div style="font-weight:600;">Where is the restroom?</div>
+              <div style="color:var(--c-text-secondary);">トイレはどこですか？</div>
+            </div>
+            <div style="padding:var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <div style="font-weight:600;">Can I pay by credit card?</div>
+              <div style="color:var(--c-text-secondary);">カードで払えますか？</div>
+            </div>
+            <div style="padding:var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <div style="font-weight:600;">I'd like to check in, please.</div>
+              <div style="color:var(--c-text-secondary);">チェックインをお願いします</div>
+            </div>
+            <div style="padding:var(--space-sm);background:var(--c-bg-muted);border-radius:var(--radius-sm);">
+              <div style="font-weight:600;">Could you take a photo of us?</div>
+              <div style="color:var(--c-text-secondary);">写真を撮ってもらえますか？</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 緊急時 -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">緊急連絡先</h2>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div style="display:grid;gap:var(--space-sm);">
+            <a href="tel:911" style="display:flex;justify-content:space-between;align-items:center;padding:var(--space-md);background:var(--c-danger);color:white;border-radius:var(--radius-sm);text-decoration:none;">
+              <div>
+                <div style="font-weight:600;">緊急通報</div>
+                <div style="font-size:12px;opacity:0.9;">警察・消防・救急</div>
+              </div>
+              <div style="font-size:1.5rem;font-weight:700;">911</div>
+            </a>
+            <a href="tel:+14032940782" style="display:flex;justify-content:space-between;align-items:center;padding:var(--space-md);background:var(--c-bg-muted);border-radius:var(--radius-sm);text-decoration:none;color:inherit;">
+              <div>
+                <div style="font-weight:600;">在カルガリー日本総領事館</div>
+                <div style="font-size:12px;color:var(--c-text-muted);">平日 9:00-12:00, 13:30-16:30</div>
+              </div>
+              <div style="font-size:13px;font-weight:600;">+1-403-294-0782</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function updateTime() {
+      const now = new Date();
+      document.getElementById('time-jst').textContent = now.toLocaleTimeString('ja-JP', { timeZone: 'Asia/Tokyo', hour: '2-digit', minute: '2-digit' });
+      document.getElementById('time-mst').textContent = now.toLocaleTimeString('en-CA', { timeZone: 'America/Edmonton', hour: '2-digit', minute: '2-digit' });
+    }
+    updateTime();
+    setInterval(updateTime, 1000);
+  </script>
+</body>
+</html>
