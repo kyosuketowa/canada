@@ -2,11 +2,145 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>日程 - エドモントン旅行しおり</title>
   <link rel="icon" type="image/svg+xml" href="./images/icon.svg">
   <link rel="stylesheet" href="./styles.css">
   <meta name="theme-color" content="#D52B1E">
+  <style>
+    .passenger-card {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: white;
+      padding: var(--space-md);
+      border-radius: var(--radius-md);
+      margin-bottom: var(--space-md);
+    }
+    .passenger-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: var(--space-xs);
+    }
+    .ticket-info {
+      font-size: 12px;
+      opacity: 0.85;
+    }
+    .flight-card {
+      background: white;
+      border-radius: var(--radius-md);
+      padding: var(--space-md);
+      margin-bottom: var(--space-sm);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .flight-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--space-sm);
+      padding-bottom: var(--space-sm);
+      border-bottom: 1px solid var(--c-border);
+    }
+    .flight-number {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--c-primary);
+    }
+    .flight-seat {
+      background: var(--c-primary);
+      color: white;
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 13px;
+    }
+    .flight-route {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-sm);
+    }
+    .flight-city {
+      flex: 1;
+    }
+    .flight-city-code {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+    .flight-city-name {
+      font-size: 11px;
+      color: var(--c-text-muted);
+    }
+    .flight-city-time {
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .flight-arrow {
+      color: var(--c-text-muted);
+      font-size: 1.2rem;
+    }
+    .flight-details {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-xs);
+      font-size: 11px;
+      background: var(--c-bg-muted);
+      padding: var(--space-sm);
+      border-radius: var(--radius-sm);
+    }
+    .flight-detail-item {
+      text-align: center;
+    }
+    .flight-detail-label {
+      color: var(--c-text-muted);
+      margin-bottom: 2px;
+    }
+    .flight-detail-value {
+      font-weight: 600;
+    }
+    .flight-jst {
+      margin-top: var(--space-sm);
+      padding: var(--space-xs) var(--space-sm);
+      background: #fff3e0;
+      border-radius: var(--radius-sm);
+      font-size: 12px;
+      color: #e65100;
+      text-align: center;
+    }
+    .baggage-info {
+      background: #e3f2fd;
+      padding: var(--space-md);
+      border-radius: var(--radius-md);
+      margin-top: var(--space-md);
+    }
+    .baggage-title {
+      font-weight: 600;
+      margin-bottom: var(--space-sm);
+      color: #1565c0;
+    }
+    .baggage-item {
+      font-size: 13px;
+      margin-bottom: var(--space-xs);
+    }
+    .ref-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xs);
+      margin-top: var(--space-sm);
+    }
+    .ref-item {
+      background: var(--c-bg-muted);
+      padding: var(--space-sm);
+      border-radius: var(--radius-sm);
+      font-size: 12px;
+    }
+    .ref-label {
+      color: var(--c-text-muted);
+      font-size: 10px;
+    }
+    .ref-value {
+      font-weight: 600;
+      font-family: monospace;
+    }
+  </style>
 </head>
 <body>
   <header class="page-header">
@@ -26,41 +160,296 @@
   </nav>
 
   <main>
+    <!-- 搭乗者情報 -->
     <section class="section">
+      <div class="passenger-card">
+        <div class="passenger-name">MORISHITA ERIKO（MS）</div>
+        <div class="ticket-info">
+          航空券番号: 205-2427350951（往路）/ 205-2427350972（復路）
+        </div>
+        <div class="ref-grid">
+          <div class="ref-item" style="background:rgba(255,255,255,0.1);">
+            <div class="ref-label" style="color:rgba(255,255,255,0.7);">往路予約番号</div>
+            <div class="ref-value copyable" style="color:white;" onclick="copyText('FDNLN4')">FDNLN4 📋</div>
+          </div>
+          <div class="ref-item" style="background:rgba(255,255,255,0.1);">
+            <div class="ref-label" style="color:rgba(255,255,255,0.7);">復路予約番号</div>
+            <div class="ref-value copyable" style="color:white;" onclick="copyText('FDPLGK')">FDPLGK 📋</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 往路フライト -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">往路 3/3（火）</h2>
+      </div>
+
+      <!-- Flight 1 -->
+      <div class="flight-card">
+        <div class="flight-header">
+          <div class="flight-number">AC024</div>
+          <div class="flight-seat">座席 24A 窓側</div>
+        </div>
+        <div class="flight-route">
+          <div class="flight-city">
+            <div class="flight-city-code">KIX</div>
+            <div class="flight-city-name">関西空港 T1</div>
+            <div class="flight-city-time">19:25発</div>
+          </div>
+          <div class="flight-arrow">✈︎→</div>
+          <div class="flight-city" style="text-align:right;">
+            <div class="flight-city-code">YVR</div>
+            <div class="flight-city-name">バンクーバー TM</div>
+            <div class="flight-city-time">11:35着</div>
+          </div>
+        </div>
+        <div class="flight-details">
+          <div class="flight-detail-item">
+            <div class="flight-detail-label">機材</div>
+            <div class="flight-detail-value">787-9</div>
+          </div>
+          <div class="flight-detail-item">
+            <div class="flight-detail-label">飛行時間</div>
+            <div class="flight-detail-value">約9時間</div>
+          </div>
+          <div class="flight-detail-item">
+            <div class="flight-detail-label">乗継時間</div>
+            <div class="flight-detail-value">5時間40分</div>
+          </div>
+        </div>
+        <div class="flight-jst">🇯🇵 日本時間 翌4日 04:35着</div>
+      </div>
+
+      <!-- Flight 2 -->
+      <div class="flight-card">
+        <div class="flight-header">
+          <div class="flight-number">AC220</div>
+          <div class="flight-seat">座席 24F 窓側</div>
+        </div>
+        <div class="flight-route">
+          <div class="flight-city">
+            <div class="flight-city-code">YVR</div>
+            <div class="flight-city-name">バンクーバー TM</div>
+            <div class="flight-city-time">17:15発</div>
+          </div>
+          <div class="flight-arrow">✈︎→</div>
+          <div class="flight-city" style="text-align:right;">
+            <div class="flight-city-code">YYC</div>
+            <div class="flight-city-name">カルガリー</div>
+            <div class="flight-city-time">19:44着</div>
+          </div>
+        </div>
+        <div class="flight-details">
+          <div class="flight-detail-item">
+            <div class="flight-detail-label">機材</div>
+            <div class="flight-detail-value">737 MAX 8</div>
+          </div>
+          <div class="flight-detail-item">
+            <div class="flight-detail-label">飛行時間</div>
+            <div class="flight-detail-value">約1時間29分</div>
+          </div>
+          <div class="flight-detail-item">
+            <div class="flight-detail-label">乗継時間</div>
+            <div class="flight-detail-value">1時間1分</div>
+          </div>
+        </div>
+        <div class="flight-jst">🇯🇵 日本時間 翌4日 10:15発 → 11:44着</div>
+      </div>
+
+      <!-- Flight 3 -->
+      <div class="flight-card">
+        <div class="flight-header">
+          <div class="flight-number">AC8144</div>
+          <div class="flight-seat">座席 6A 窓側</div>
+        </div>
+        <div class="flight-route">
+          <div class="flight-city">
+            <div class="flight-city-code">YYC</div>
+            <div class="flight-city-name">カルガリー</div>
+            <div class="flight-city-time">20:45発</div>
+          </div>
+          <div class="flight-arrow">✈︎→</div>
+          <div class="flight-city" style="text-align:right;">
+            <div class="flight-city-code">YEG</div>
+            <div class="flight-city-name">エドモントン T1</div>
+            <div class="flight-city-time">21:43着</div>
+          </div>
+        </div>
+        <div class="flight-details">
+          <div class="flight-detail-item">
+            <div class="flight-detail-label">機材</div>
+            <div class="flight-detail-value">Dash 8-Q400</div>
+          </div>
+          <div class="flight-detail-item">
+            <div class="flight-detail-label">飛行時間</div>
+            <div class="flight-detail-value">約58分</div>
+          </div>
+          <div class="flight-detail-item">
+            <div class="flight-detail-label">運航</div>
+            <div class="flight-detail-value">AC EXPRESS</div>
+          </div>
+        </div>
+        <div class="flight-jst">🇯🇵 日本時間 翌4日 12:45発 → 13:43着</div>
+      </div>
+    </section>
+
+    <!-- 復路フライト -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">復路 3/7（土）</h2>
+      </div>
+
+      <!-- Flight 4 -->
+      <div class="flight-card">
+        <div class="flight-header">
+          <div class="flight-number">AC2077</div>
+          <div class="flight-seat">座席 23A 窓側</div>
+        </div>
+        <div class="flight-route">
+          <div class="flight-city">
+            <div class="flight-city-code">YEG</div>
+            <div class="flight-city-name">エドモントン</div>
+            <div class="flight-city-time">11:05発</div>
+          </div>
+          <div class="flight-arrow">✈︎→</div>
+          <div class="flight-city" style="text-align:right;">
+            <div class="flight-city-code">YVR</div>
+            <div class="flight-city-name">バンクーバー TM</div>
+            <div class="flight-city-time">11:54着</div>
+          </div>
+        </div>
+        <div class="flight-details">
+          <div class="flight-detail-item">
+            <div class="flight-detail-label">機材</div>
+            <div class="flight-detail-value">737 MAX 8</div>
+          </div>
+          <div class="flight-detail-item">
+            <div class="flight-detail-label">飛行時間</div>
+            <div class="flight-detail-value">約1時間49分</div>
+          </div>
+          <div class="flight-detail-item">
+            <div class="flight-detail-label">乗継時間</div>
+            <div class="flight-detail-value">3時間21分</div>
+          </div>
+        </div>
+        <div class="flight-jst">🇯🇵 日本時間 翌8日 03:05発 → 04:54着</div>
+      </div>
+
+      <!-- Flight 5 -->
+      <div class="flight-card">
+        <div class="flight-header">
+          <div class="flight-number">NH115</div>
+          <div class="flight-seat">座席 22A 窓側</div>
+        </div>
+        <div class="flight-route">
+          <div class="flight-city">
+            <div class="flight-city-code">YVR</div>
+            <div class="flight-city-name">バンクーバー</div>
+            <div class="flight-city-time">15:15発</div>
+          </div>
+          <div class="flight-arrow">✈︎→</div>
+          <div class="flight-city" style="text-align:right;">
+            <div class="flight-city-code">HND</div>
+            <div class="flight-city-name">羽田</div>
+            <div class="flight-city-time">18:45着(+1)</div>
+          </div>
+        </div>
+        <div class="flight-details">
+          <div class="flight-detail-item">
+            <div class="flight-detail-label">機材</div>
+            <div class="flight-detail-value">787-9</div>
+          </div>
+          <div class="flight-detail-item">
+            <div class="flight-detail-label">飛行時間</div>
+            <div class="flight-detail-value">約10時間30分</div>
+          </div>
+          <div class="flight-detail-item">
+            <div class="flight-detail-label">運航</div>
+            <div class="flight-detail-value">ANA 全日空</div>
+          </div>
+        </div>
+        <div class="flight-jst">🇯🇵 日本時間 3/8 08:15発 → 18:45着</div>
+      </div>
+    </section>
+
+    <!-- 国内線 -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">国内線 3/9（月）</h2>
+      </div>
+
+      <!-- Flight 6 -->
+      <div class="flight-card">
+        <div class="flight-header">
+          <div class="flight-number">ANA3823</div>
+          <div class="flight-seat">座席 22F 窓側</div>
+        </div>
+        <div class="flight-route">
+          <div class="flight-city">
+            <div class="flight-city-code">HND</div>
+            <div class="flight-city-name">羽田 第1ターミナル</div>
+            <div class="flight-city-time">12:00発</div>
+          </div>
+          <div class="flight-arrow">✈︎→</div>
+          <div class="flight-city" style="text-align:right;">
+            <div class="flight-city-code">KIX</div>
+            <div class="flight-city-name">関西空港</div>
+            <div class="flight-city-time">13:25着</div>
+          </div>
+        </div>
+        <div class="flight-details">
+          <div class="flight-detail-item">
+            <div class="flight-detail-label">機材</div>
+            <div class="flight-detail-value">A320</div>
+          </div>
+          <div class="flight-detail-item">
+            <div class="flight-detail-label">運航</div>
+            <div class="flight-detail-value">SFJ運航</div>
+          </div>
+          <div class="flight-detail-item">
+            <div class="flight-detail-label">予約番号</div>
+            <div class="flight-detail-value copyable" onclick="copyText('0138')">0138 📋</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert alert-info" style="margin-top:var(--space-sm);">
+        <span class="alert-icon">i</span>
+        <div class="alert-content">
+          <p class="alert-text">別予約の特典航空券です。羽田は第1ターミナルからの出発です。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 手荷物情報 -->
+    <section class="section">
+      <div class="baggage-info">
+        <div class="baggage-title">手荷物規定（国際線）</div>
+        <div class="baggage-item"><strong>預入手荷物:</strong> 2個まで無料（各23kg以内、3辺合計158cm以内）</div>
+        <div class="baggage-item"><strong>機内持込:</strong> 1個 + 身の回り品1個</div>
+      </div>
+    </section>
+
+    <!-- 日程詳細 -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">日程詳細</h2>
+      </div>
+
       <!-- Day 1 -->
       <details class="schedule-day" open>
         <summary>
           <div class="schedule-day-info">
             <div class="schedule-day-date">3/3 (火)</div>
-            <div class="schedule-day-title">関西 → バンクーバー → カルガリー → エドモントン</div>
+            <div class="schedule-day-title">出発日</div>
           </div>
           <span class="schedule-day-badge">1日目</span>
         </summary>
         <div class="schedule-day-content">
           <div class="timeline-item">
-            <div class="timeline-time">19:25<br><small style="color:var(--c-text-muted);font-size:10px;">日本時間</small></div>
-            <div class="timeline-content">
-              <div class="timeline-title">関西空港 出発（ターミナル1）</div>
-              <div class="timeline-detail">AC024便（エア・カナダ）→ バンクーバー 11:35着（ターミナルM）<br><small style="color:var(--c-primary);">🇯🇵 翌4日 04:35</small></div>
-              <span class="tag tag-flight copyable" onclick="copyText('RYDPTB')">確認番号: RYDPTB 📋</span>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-time">17:15<br><small style="color:var(--c-text-muted);font-size:10px;">現地時間</small></div>
-            <div class="timeline-content">
-              <div class="timeline-title">バンクーバー → カルガリー</div>
-              <div class="timeline-detail">AC220便 → 19:44着（乗継時間: 5時間40分）<br><small style="color:var(--c-primary);">🇯🇵 翌4日 10:15発 → 11:44着</small></div>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-time">20:45<br><small style="color:var(--c-text-muted);font-size:10px;">現地時間</small></div>
-            <div class="timeline-content">
-              <div class="timeline-title">カルガリー → エドモントン</div>
-              <div class="timeline-detail">AC8144便（AIR CANADA EXPRESS）→ 21:43着（乗継時間: 1時間1分）<br><small style="color:var(--c-primary);">🇯🇵 翌4日 12:45発 → 13:43着</small></div>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-time">22:00<br><small style="color:var(--c-text-muted);font-size:10px;">現地時間</small></div>
+            <div class="timeline-time">22:00頃</div>
             <div class="timeline-content">
               <div class="timeline-title">Renaissance Edmonton Airport Hotel チェックイン</div>
               <div class="timeline-detail">空港隣接・徒歩5分<br><small style="color:var(--c-primary);">🇯🇵 翌4日 14:00</small></div>
@@ -123,7 +512,7 @@
         <summary>
           <div class="schedule-day-info">
             <div class="schedule-day-date">3/6 (金)</div>
-            <div class="schedule-day-title">アイスホッケー観戦 with イチローさん家族</div>
+            <div class="schedule-day-title">アイスホッケー観戦</div>
           </div>
           <span class="schedule-day-badge">4日目</span>
         </summary>
@@ -166,38 +555,16 @@
         <summary>
           <div class="schedule-day-info">
             <div class="schedule-day-date">3/7 (土)</div>
-            <div class="schedule-day-title">エドモントン → バンクーバー → 機中泊</div>
+            <div class="schedule-day-title">帰国日（機中泊）</div>
           </div>
           <span class="schedule-day-badge">5日目</span>
         </summary>
         <div class="schedule-day-content">
           <div class="timeline-item">
-            <div class="timeline-time">午前<br><small style="color:var(--c-text-muted);font-size:10px;">現地時間</small></div>
+            <div class="timeline-time">午前</div>
             <div class="timeline-content">
               <div class="timeline-title">JW Marriott チェックアウト</div>
-              <div class="timeline-detail">空港へ移動（タクシー/Uber 約30分）</div>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-time">11:05<br><small style="color:var(--c-text-muted);font-size:10px;">現地時間</small></div>
-            <div class="timeline-content">
-              <div class="timeline-title">エドモントン空港 出発</div>
-              <div class="timeline-detail">AC2077便（エア・カナダ・ルージュ）→ バンクーバー 11:54着（ターミナルM）<br><small style="color:var(--c-primary);">🇯🇵 翌8日 03:05発 → 04:54着</small></div>
-              <span class="tag tag-flight copyable" onclick="copyText('RYDPTB')">確認番号: RYDPTB 📋</span>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-time">15:15<br><small style="color:var(--c-text-muted);font-size:10px;">現地時間</small></div>
-            <div class="timeline-content">
-              <div class="timeline-title">バンクーバー → 羽田</div>
-              <div class="timeline-detail">NH115便（ANA / 全日空）（乗継時間: 3時間21分）→ 翌日18:45着<br><small style="color:var(--c-primary);">🇯🇵 翌8日 08:15発</small></div>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-time">夜</div>
-            <div class="timeline-content">
-              <div class="timeline-title">機内泊</div>
-              <div class="timeline-detail">フライト時間: 約10時間30分</div>
+              <div class="timeline-detail">空港へ移動（タクシー/Uber 約30分 / $50-60）</div>
             </div>
           </div>
         </div>
@@ -214,14 +581,14 @@
         </summary>
         <div class="schedule-day-content">
           <div class="timeline-item">
-            <div class="timeline-time">18:45<br><small style="color:var(--c-text-muted);font-size:10px;">🇯🇵日本時間</small></div>
+            <div class="timeline-time">18:45</div>
             <div class="timeline-content">
               <div class="timeline-title">羽田空港 到着</div>
               <div class="timeline-detail">入国審査・荷物受取</div>
             </div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-time">20:00<br><small style="color:var(--c-text-muted);font-size:10px;">🇯🇵日本時間</small></div>
+            <div class="timeline-time">20:00</div>
             <div class="timeline-content">
               <div class="timeline-title">東京/羽田周辺 宿泊</div>
               <div class="timeline-detail">翌日の国内線に備えて空港近くがおすすめ</div>
@@ -236,21 +603,13 @@
         <summary>
           <div class="schedule-day-info">
             <div class="schedule-day-date">3/9 (月)</div>
-            <div class="schedule-day-title">羽田 → 関西</div>
+            <div class="schedule-day-title">帰宅日</div>
           </div>
           <span class="schedule-day-badge">7日目</span>
         </summary>
         <div class="schedule-day-content">
           <div class="timeline-item">
-            <div class="timeline-time">12:00<br><small style="color:var(--c-text-muted);font-size:10px;">🇯🇵日本時間</small></div>
-            <div class="timeline-content">
-              <div class="timeline-title">羽田空港 出発</div>
-              <div class="timeline-detail">ANA3823便</div>
-              <span class="tag tag-flight copyable" onclick="copyText('0138')">確認番号: 0138 📋</span>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-time">13:25<br><small style="color:var(--c-text-muted);font-size:10px;">🇯🇵日本時間</small></div>
+            <div class="timeline-time">13:25</div>
             <div class="timeline-content">
               <div class="timeline-title">関西空港 到着</div>
               <div class="timeline-detail">お疲れ様でした！</div>
